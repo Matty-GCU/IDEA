@@ -1,4 +1,4 @@
-package chapter07.abvanced都还得看看.exp5;
+package chapter07.abvanced.exp5;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class StudentDemo {
     public static void main(String[] args) {
         try {
-            Class c = Student.class;
+            Class<Student> c = Student.class;
             Constructor<Student> constructor = c.getDeclaredConstructor();
             Student student = constructor.newInstance();
             Method method = c.getDeclaredMethod("setName", String.class);

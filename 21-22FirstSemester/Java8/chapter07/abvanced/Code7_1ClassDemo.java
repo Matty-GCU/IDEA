@@ -1,4 +1,4 @@
-package chapter07.abvanced都还得看看;
+package chapter07.abvanced;
 
 public class Code7_1ClassDemo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package chapter07.abvanced都还得看看.exp5;
+package chapter07.abvanced.exp5;
 
 public class Student {
     String name, grade, dept;
