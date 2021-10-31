@@ -1,6 +1,6 @@
 package chapter04.stack;
 
-import chapter02.linearlist.SequentialList;
+import chapter02.linearlist.sequential.SequentialList;
 
 /**
  * 4.1.2栈的存储结构和实现（1）顺序栈
@@ -61,6 +61,13 @@ public class SequentialStack<T> implements Stack<T> {
     @Override
     public void clear() {
         seqList.clear();
+    }
+
+    /**
+     * O(1)
+     */
+    public int size() {
+        return seqList.size();
     }
 
     /**

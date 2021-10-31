@@ -1,6 +1,6 @@
 package chapter04.stack;
 
-import chapter02.linearlist.SinglyLinkedList;
+import chapter02.linearlist.linked.SinglyLinkedList;
 
 /**
  * 4.1.2栈的存储结构和实现（2）链式栈
@@ -25,7 +25,7 @@ public class LinkedStack<T> implements Stack<T>{
     }
 
     /**
-     * O(N)
+     * O(1)
      * 使用头插入、头删除可以极大地提高效率
      */
     @Override
