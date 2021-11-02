@@ -23,7 +23,7 @@ public class Administrator {
 			for(int i=0;i<numTopic;i++) {
 				System.out.print("输入题目：");
 				topic=sc.next();
-				System.out.print("A.");
+				System.out.print("Person.");
 				A=sc.next();
 				System.out.print("分值：");
 				pointA=sc.nextInt();

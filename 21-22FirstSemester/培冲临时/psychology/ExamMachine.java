@@ -30,7 +30,7 @@ public class ExamMachine extends Administrator{
             	System.out.println("对不起测试时间已结束！");
             	return answers;
             }
-        	if(!(answers[i].equals("A")||answers[i].equals("B")||answers[i].equals("C")||answers[i].equals("D"))) {
+        	if(!(answers[i].equals("Person")||answers[i].equals("B")||answers[i].equals("C")||answers[i].equals("D"))) {
         		System.out.println("你还有题目未答完！");
         		System.out.println((i+1)+"."+studenttest.get(i).link());
                 System.out.println("请输入你的选择：");
@@ -43,7 +43,7 @@ public class ExamMachine extends Administrator{
 		int score=0;
 		for(int i=0;i<studentresult.size();i++) {
 			
-				if(an[i].equals("A")) {
+				if(an[i].equals("Person")) {
 					score+=studentresult.get(i).getScoreA();
 			}
 				else if(an[i].equals("B")) {

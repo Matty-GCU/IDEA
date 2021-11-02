@@ -12,7 +12,7 @@ public class LinkedStack<T> implements Stack<T>{
     /**
      * O(1)
      */
-    public LinkedStack() {
+    LinkedStack() {
         singlyLinkedList = new SinglyLinkedList<>();
     }
 

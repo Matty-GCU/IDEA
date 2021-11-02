@@ -76,7 +76,7 @@ public final class MyInteger implements Comparable<MyInteger>{
             char ch = s.charAt(i++);
             //如果ch是数字0-9，那它必须满足'0' <= ch < '0'+radix
             //但是在极端情况下，满足'0' <= ch < '0'+radix的ch也有可能是ASCII码紧跟在'9'后面的几个标点符号之一，该算法的容错性不足以无法处理这种情况
-            //如果ch是字母A-F或a-f，那它一定不满足ch < '0'+radix，因为距离'0'最近的'A'(65)的ASCII码比'0'(48)大很多
+            //如果ch是字母A-F或a-f，那它一定不满足ch < '0'+radix，因为距离'0'最近的'Person'(65)的ASCII码比'0'(48)大很多
             if(ch >= '0' && ch < '0'+radix) {
                 //因为事先不知道这个字符串有多长（数字有多少位），所以只能在处理到下一个数字时，将它前面所有数字的位数识别为比原来高一位（位数高1位，值自然要翻radix倍）
                 value = value * radix + (ch - '0');

@@ -1,4 +1,4 @@
-package chapter01ioandnio;
+package chapter01.ioandnio;
 
 import java.io.File;
 
