@@ -29,7 +29,7 @@ public class LinkedQueue<T> {
     }
 
     /**
-     * 未测试
+     * 已测试
      */
     public boolean add(T x) {
         if(x == null) {
@@ -43,7 +43,49 @@ public class LinkedQueue<T> {
             rear.next = newNode;
         }
         rear = newNode;
+        size++;
         return true;
+    }
+
+    /**
+     * 从这一行以下，都是不看书写的
+     */
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        if(isEmpty()) {
+            return "LinkedQueue[]";
+        }
+        str.append("LinkedQueue[");
+        Node node = front;
+        while(node != null) {
+            str.append(node.toString()).append(", ");
+            node = node.next;
+        }
+        str.replace(str.length() - 2, str.length(), "");
+        str.append("]");
+        return str.toString();
+    }
+
+    int size = 0;
+
+    public int getSize() {
+        return size;
+    }
+
+    public T peek() {
+        return rear.data;
+    }
+
+    public T poll() {
+        T oldNodeData = peek();
+        if(isEmpty()) {
+            return null;
+        }
+        else {
+            //TODO
+            return null;
+        }
     }
 
 }

@@ -2,7 +2,7 @@ package chapter04.queue;
 
 /**
  * 4.2.2队列的存储结构和实现
- * 顺序循环队列
+ * 顺序**循环**队列
  * 因为循环，所以指针（以front为例）前进1位不能用front++，要用(front + 1) % element.length
  * @author Matty's PC
  */
@@ -12,7 +12,7 @@ public class SeqQueue<T> implements Queue<T> {
     private static final int MIN_CAPACITY = 16;
     private int size;
     /**
-     * 队头元素下标
+     * 队头元素下标都加上
      */
     private int front;
 
@@ -57,7 +57,7 @@ public class SeqQueue<T> implements Queue<T> {
             Object[] oldArray = element;
             element = new Object[element.length * 2];
             int newRear = 0;
-            for(int i = front; i != rear; i = (front + 1) % oldArray.length) {
+            for(int i = front; i != rear; i = (i + 1) % oldArray.length) {
                 element[newRear++] = oldArray[i];
             }
             front = 0;
@@ -77,6 +77,7 @@ public class SeqQueue<T> implements Queue<T> {
         }
         T temp = (T) element[front];
         front = (front + 1) % element.length;
+        size--;
         return temp;
     }
 
@@ -90,9 +91,9 @@ public class SeqQueue<T> implements Queue<T> {
     public String toString() {
         StringBuilder str = new StringBuilder();
         if(isEmpty()) {
-            return "[]";
+            return "SeqQueue[]";
         }
-        str.append("[");
+        str.append("SeqQueue[");
         for(int i = front; i != rear; i = (i+1) % element.length) {
             str.append(element[i]);
             str.append(", ");
