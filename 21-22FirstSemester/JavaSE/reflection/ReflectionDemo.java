@@ -1,6 +1,6 @@
 package reflection;
 
-import chapter07.abvanced.exp6.MyAnnotation;
+import chapter07.java.advanced.exp7.MyAnnotation;
 
 import java.lang.reflect.*;
 import java.util.HashSet;

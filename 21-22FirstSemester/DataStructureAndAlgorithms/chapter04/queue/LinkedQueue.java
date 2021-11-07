@@ -8,7 +8,7 @@ import chapter02.linearlist.linked.Node;
  * 维护一个尾指针，以保证入队出队的时间复杂度都为O(1)。那为什么不用循环双链表？
  * @author Matty's PC
  */
-public class LinkedQueue<T> {
+public class LinkedQueue<T> implements Queue<T> {
 
     /**
      * 头指针指向队头
@@ -24,6 +24,7 @@ public class LinkedQueue<T> {
         front = rear = null;
     }
 
+    @Override
     public boolean isEmpty() {
         return front == null && rear ==null;
     }
@@ -31,6 +32,7 @@ public class LinkedQueue<T> {
     /**
      * 已测试
      */
+    @Override
     public boolean add(T x) {
         if(x == null) {
             return false;
@@ -57,7 +59,7 @@ public class LinkedQueue<T> {
             return "LinkedQueue[]";
         }
         str.append("LinkedQueue[");
-        Node node = front;
+        Node<T> node = front;
         while(node != null) {
             str.append(node.toString()).append(", ");
             node = node.next;
@@ -73,19 +75,28 @@ public class LinkedQueue<T> {
         return size;
     }
 
+    @Override
     public T peek() {
-        return rear.data;
+        return front.data;
     }
 
+    @Override
     public T poll() {
-        T oldNodeData = peek();
+        //队列为空
         if(isEmpty()) {
             return null;
         }
-        else {
-            //TODO
-            return null;
+        T oldFrontData = peek();
+        //队列只有一个元素
+        if(front == rear) {
+            front = rear = null;
         }
+        //队列超过两个元素
+        else {
+            front = front.next;
+        }
+        size--;
+        return oldFrontData;
     }
 
 }
