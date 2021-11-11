@@ -3,17 +3,39 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <!--配置Servlet-->
     <servlet>
-        <servlet-name>myServlet</servlet-name>
-        <servlet-class>servlet.ServletTest</servlet-class>
+        <servlet-name>myFirstServlet</servlet-name>
+        <servlet-class>chapter09.servlet.ServletTest</servlet-class>
+        <!--设置局部参数-->
+        <init-param>
+            <param-name>driverClassName</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>myServlet</servlet-name>
-        <url-pattern>/servlet/welcome</url-pattern>
+        <servlet-name>myFirstServlet</servlet-name>
+        <!--必须加一杠，否则连部署都失败-->
+        <url-pattern>/ServletTest</url-pattern>
     </servlet-mapping>
+
     <!--设置欢迎页面-->
     <welcome-file-list>
+        <!--必须加一杠，否则连部署都失败；另外,不知道为什么welcome-file没法用Servlet-->
+<!--        <welcome-file>/welcome</welcome-file>-->
         <welcome-file>/index.jsp</welcome-file>
+<!--        <welcome-file>/the second option</welcome-file>-->
     </welcome-file-list>
+
+    <!--设置全局变量-->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+    </context-param>
+    
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/chapter09_servlet/CommonErrorPage.jsp</location>
+    </error-page>
 </web-app>

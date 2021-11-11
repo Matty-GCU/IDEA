@@ -2,6 +2,9 @@ package annotation;
 
 import java.lang.annotation.Inherited;
 
+/**
+ * @author Matty's PC
+ */
 public class AnnotationDemo {
 
     @java.lang.Override
