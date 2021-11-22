@@ -1,9 +1,7 @@
 package test;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Matty's PC
@@ -13,5 +11,9 @@ public class Test2 {
         List<String> list = Arrays.asList("str1", "str2", "str3", "str0");
         list.sort(String::compareTo);
         list.forEach(System.out::println);
+        ArrayList<Integer> i = new ArrayList<>();
+        Integer[] a = new Integer[5];
+        i.toArray(a);
+        HashMap<Integer, Integer> s = new HashMap<>();
     }
 }
