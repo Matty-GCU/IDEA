@@ -30,5 +30,8 @@ public class Code1_1FileDemo {
         for(File fileSystemRoot: roots) {
             System.out.println(fileSystemRoot);
         }
+        if(newFile.delete()) {
+            System.out.println("文件删除成功");
+        }
     }
 }

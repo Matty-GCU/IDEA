@@ -5,7 +5,7 @@ package chapter04.recursion;
  */
 public class NumberTowerDemo {
     public static void main(String[] args) {
-        NumberTower tower = new NumberTower(9);
-        tower.print(9);
+        NumberTower tower = new NumberTower();
+        tower.print(9, 5);
     }
 }

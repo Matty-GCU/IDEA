@@ -7,8 +7,9 @@ public class NumberTower {
 
     int maxNum = -1;
 
-    public NumberTower(int maxNum) {
+    public void print(int maxNum, int bottomNum) {
         this.maxNum = maxNum;
+        print(bottomNum);
     }
 
     public void print(int currentNum) {
