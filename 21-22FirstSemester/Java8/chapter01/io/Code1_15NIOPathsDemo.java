@@ -6,7 +6,7 @@ import java.nio.file.Paths;
  * @author Matty's PC
  * @date 2021/11/23
  */
-public class Code1_15NIOPathDemo {
+public class Code1_15NIOPathsDemo {
     public static void main(String[] args) {
         Path path = Paths.get("一个不存在的文件名。也可以用.代替");
         System.out.println("path的绝对路径：" + path);
