@@ -7,6 +7,6 @@ import java.io.*;
  */
 public class Code1_16NIO2FilesDemo {
     public static void main(String[] args) {
-        KeyBoard
+
     }
 }
