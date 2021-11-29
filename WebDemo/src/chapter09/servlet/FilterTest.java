@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * @author Matty
  **/
-@WebFilter(filterName = "FilterTest", urlPatterns = "/index.jsp")
+@WebFilter("/index.jsp")
 public class FilterTest implements Filter {
 
     @Override

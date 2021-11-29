@@ -11,6 +11,6 @@
     <title>index.jsp</title>
   </head>
   <body>
-    这里是欢迎页面！
+    这里是WebDemo项目的欢迎页面！
   </body>
 </html>
