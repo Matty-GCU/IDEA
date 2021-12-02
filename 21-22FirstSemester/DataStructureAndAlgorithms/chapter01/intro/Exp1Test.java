@@ -4,7 +4,7 @@ package chapter01.intro;
  * 20210908数据结构上机实验
  * 20210909修改了【超出size-1】和【跳不出while】的错误
  */
-public class Exp1Demo {
+public class Exp1Test {
 
     public static void main(String[] args) {
         Exp1Array array1 = new Exp1Array();
