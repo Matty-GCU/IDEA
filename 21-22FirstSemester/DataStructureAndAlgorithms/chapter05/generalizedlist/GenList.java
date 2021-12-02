@@ -25,5 +25,4 @@ public class GenList<T> {
         head = new GenNode<>(null, null, null);
     }
 
-    
 }
