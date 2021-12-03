@@ -22,7 +22,9 @@ public class GenList<T> {
      * @param name
      */
     public GenList(T name) {
-        head = new GenNode<>(null, null, null);
+        head = new GenNode<>(name, null, null);
     }
+
+    
 
 }
