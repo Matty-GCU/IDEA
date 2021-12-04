@@ -157,9 +157,17 @@ public class BinaryTree<T> {
         }
     }
 
+    /**
+     * 层次遍历二叉树
+     */
+    public void levelorder() {
+
+    }
+
     //实验6要求：实现对生成的二叉树进行前序、中序、后序遍历，计算高度、节点总数、叶子节点数。
-    //有一个insert和remove都还没测试
-//    public int size() {
-//    }
+    //有一个insert和remove都还没测试，需要search方法支持
+//    public int size() {}
+//    public int height() {}
+//    public BinaryNode<T> search(T key) {}
 
 }
