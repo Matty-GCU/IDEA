@@ -15,16 +15,23 @@ public class GenNode<T> {
     /**
      * 子表
      */
-    public GenList<T> child;
+    public GenListImpl<T> child;
 
     /**
      * 后继结点
      */
     public GenNode<T> next;
 
-    public GenNode(T data, GenList<T> child, GenNode<T> next) {
+    public GenNode(T data, GenListImpl<T> child, GenNode<T> next) {
         this.data = data;
         this.child = child;
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        //下面这行如何理解？如果存在子表，会不会就漏了data.toString()？
+        //答案是不会！请注意GenListCreator的create2()方法是如何处理结点的子表的。
+        return child == null ? data.toString() : child.toString();
     }
 }
