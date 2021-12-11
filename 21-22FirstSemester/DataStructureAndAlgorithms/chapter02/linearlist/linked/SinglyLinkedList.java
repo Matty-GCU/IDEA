@@ -83,7 +83,7 @@ public class SinglyLinkedList<T> {
     /**
      * 这个方法课本省略，所以是原创
      * 已测试
-     * O(N)
+     * O(1)
      */
     public int size() {
         return size;

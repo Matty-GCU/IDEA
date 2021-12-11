@@ -12,7 +12,7 @@ public class LinkedStack<T> implements Stack<T>{
     /**
      * O(1)
      */
-    LinkedStack() {
+    public LinkedStack() {
         singlyLinkedList = new SinglyLinkedList<>();
     }
 
@@ -63,5 +63,12 @@ public class LinkedStack<T> implements Stack<T>{
     @Override
     public String toString() {
         return singlyLinkedList.toString();
+    }
+
+    /**
+     * O(1)
+     */
+    public int size() {
+        return singlyLinkedList.size();
     }
 }
