@@ -1,5 +1,7 @@
 package chapter06.tree;
 
+import chapter04.queue.LinkedQueue;
+import chapter04.queue.Queue;
 import chapter04.stack.LinkedStack;
 import chapter04.stack.Stack;
 
@@ -7,6 +9,8 @@ import chapter04.stack.Stack;
  * @author Matty
  **/
 public class BinaryTree<T> {
+
+    public int size;
 
     public BinaryNode<T> root;
 
@@ -27,6 +31,7 @@ public class BinaryTree<T> {
             return null;
         }
         BinaryNode<T> p = new BinaryNode<>(data);
+        size++;
         p.left = create(prelist);
         p.right = create(prelist);
         return p;
@@ -47,53 +52,9 @@ public class BinaryTree<T> {
     public void insert(T x) {
         if(x != null) {
             root = new BinaryNode<>(x, root, null);
+            size++;
         }
     }
-
-
-
-
-
-
-
-
-    /**
-     * 插入结点X情况2：X作为指定结点p的左或右孩子，原结点的原左或右结点作为X的左或右结点（见课本图6-7(b)）
-     * 时间复杂度O(1)
-     *                          未测试（没有获取特定结点引用的方法，根本没法对特定结点进行操作）
-     */
-    public BinaryNode<T> insert(BinaryNode<T> p, boolean asLeft, T x) {
-        if(p == null || x == null) {
-            return null;
-        }
-        return asLeft ? (p.left = new BinaryNode<>(x, p.left, null)) : (p.right = new BinaryNode<>(x, p.right, null));
-    }
-
-    /**
-     * 删除指定结点的左子树或右子树
-     * 时间复杂度O(1)
-     *                          未测试（没有获取特定结点引用的方法，根本没法对特定结点进行操作）
-     */
-    public void remove(BinaryNode<T> p, boolean removeLeft) {
-        if(p != null) {
-            if(removeLeft) {
-                p.left = null;
-            }
-            else {
-                p.right = null;
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 删除二叉树所有结点，包括根结点
@@ -109,16 +70,16 @@ public class BinaryTree<T> {
      * 时间复杂度O(N)
      * 已测试
      */
-    public void preorder() {
+    public void preOrder() {
         System.out.print("先根遍历二叉树：");
-        preorder(root);
+        preOrder(root);
         System.out.println();
     }
-    private void preorder(BinaryNode<T> p) {
+    private void preOrder(BinaryNode<T> p) {
         if(p != null) {
             System.out.print(p + "  ");
-            preorder(p.left);
-            preorder(p.right);
+            preOrder(p.left);
+            preOrder(p.right);
         }
     }
 
@@ -126,7 +87,7 @@ public class BinaryTree<T> {
      * 同上，先根遍历整个二叉树，不过用的是栈，没有递归
      * 已测试
      */
-    public void preorder2() {
+    public void preOrder2() {
         System.out.print("先根遍历二叉树（非递归、带空子树）：");
         Stack<BinaryNode<T>> stack = new LinkedStack<>();
         BinaryNode<T> p = root;
@@ -157,16 +118,16 @@ public class BinaryTree<T> {
      * 时间复杂度O(N)
      * 已测试
      */
-    public void inorder() {
+    public void inOrder() {
         System.out.print("中根遍历二叉树：");
-        inorder(root);
+        inOrder(root);
         System.out.println();
     }
-    private void inorder(BinaryNode<T> p) {
+    private void inOrder(BinaryNode<T> p) {
         if(p != null) {
-            inorder(p.left);
+            inOrder(p.left);
             System.out.print(p + "  ");
-            inorder(p.right);
+            inOrder(p.right);
         }
     }
 
@@ -175,17 +136,38 @@ public class BinaryTree<T> {
      * 时间复杂度O(N)
      * 已测试
      */
-    public void postorder() {
+    public void postOrder() {
         System.out.print("后根遍历二叉树：");
-        postorder(root);
+        postOrder(root);
         System.out.println();
     }
-    private void postorder(BinaryNode<T> p) {
+    private void postOrder(BinaryNode<T> p) {
         if(p != null) {
-            postorder(p.left);
-            postorder(p.right);
+            postOrder(p.left);
+            postOrder(p.right);
             System.out.print(p + "  ");
         }
+    }
+
+    /**
+     * 二叉树的层次遍历
+     * 已测试
+     */
+    public void levelOrder() {
+        Queue<BinaryNode<T>> queue = new LinkedQueue<>();
+        queue.add(root);
+        System.out.print("二叉树的层次遍历：");
+        while(! queue.isEmpty()) {
+            BinaryNode<T> p = queue.poll();
+            System.out.print(p);
+            if(p.left != null) {
+                queue.add(p.left);
+            }
+            if(p.right != null) {
+                queue.add(p.right);
+            }
+        }
+        System.out.println();
     }
 
     @Override
@@ -198,8 +180,7 @@ public class BinaryTree<T> {
      * 已测试
      */
     public String toGenListString() {
-//        return "二叉树的广义表表示" + toGenListString(root);
-        return toGenListString(root);
+        return "二叉树的广义表表示：" + toGenListString(root);
     }
     private String toGenListString(BinaryNode<T> p) {
         if(p == null) {
@@ -211,16 +192,92 @@ public class BinaryTree<T> {
         return p.toString() + "(" + toGenListString(p.left) + ", " + toGenListString(p.right) + ")";
     }
 
+    /**
+     * 返回二叉树结点个数
+     * 已测试
+     */
+    public int size() {
+        return size;
+    }
 
-    //实验6要求：实现对生成的二叉树进行前序、中序、后序遍历，计算高度、节点总数、叶子节点数。
+    /**
+     * 返回二叉树叶子结点个数
+     * 改编自preOrder2()的栈遍历
+     * 已测试
+     */
+    public int leafSize() {
+        Stack<BinaryNode<T>> stack = new LinkedStack<>();
+        int leafSize = 0;
+        BinaryNode<T> p = root;
+        while(p != null || !stack.isEmpty()) {
+            if(p != null) {
+                stack.push(p);
+                p = p.left;
+            }
+            else {
+                p = stack.pop();
+                if(p.right == null && p.left == null) {
+                    leafSize++;
+                }
+                p = p.right;
+            }
+        }
+        return leafSize;
+    }
+
+    /**
+     * 返回二叉树高度
+     * 改变自GenListImpl的depth()方法
+     * 已测试
+     * 二叉树的高度，其实就是该二叉树的作为广义表的深度+1
+     */
+    public int height() {
+        String str = toString();
+        int depth = 0;
+        LinkedStack<Character> stack = new LinkedStack<>();
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if(ch == '(') {
+                stack.push('(');
+                depth = Math.max(stack.size(), depth);
+            }
+            else if(ch == ')') {
+                stack.pop();
+            }
+        }
+        return depth + 1;
+    }
+
+    
     //有一个insert和remove都还没测试，需要search方法支持
-//    public int size() {}
-//    public int height() {}
 //    public BinaryNode<T> search(T key) {}
 
-//    /**
-//     * 层次遍历二叉树
-//     */
-//    public void levelorder() {
-//    }
+    /**
+     * 插入结点X情况2：X作为指定结点p的左或右孩子，原结点的原左或右结点作为X的左或右结点（见课本图6-7(b)）
+     * 时间复杂度O(1)
+     *                          未测试（没有获取特定结点引用的方法，根本没法对特定结点进行操作）
+     */
+    public BinaryNode<T> insert(BinaryNode<T> p, boolean asLeft, T x) {
+        if(p == null || x == null) {
+            return null;
+        }
+        return asLeft ? (p.left = new BinaryNode<>(x, p.left, null)) : (p.right = new BinaryNode<>(x, p.right, null));
+    }
+
+    /**
+     * 删除指定结点的左子树或右子树
+     * 时间复杂度O(1)
+     *                          未测试（没有获取特定结点引用的方法，根本没法对特定结点进行操作）
+     */
+    public void remove(BinaryNode<T> p, boolean removeLeft) {
+        if(p != null) {
+            if(removeLeft) {
+                p.left = null;
+            }
+            else {
+                p.right = null;
+            }
+        }
+    }
+
 }

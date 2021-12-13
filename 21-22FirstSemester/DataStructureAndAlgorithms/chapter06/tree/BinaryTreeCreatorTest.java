@@ -5,5 +5,6 @@ public class BinaryTreeCreatorTest {
         String genListStr = "A(B(D(^,G),^),C(E,F(H,^)))";
         BinaryTree<String> binaryTree = BinaryTreeCreator.createByGenListStr(genListStr);
         System.out.println(binaryTree.toGenListString());
+        System.out.println(binaryTree.size());
     }
 }

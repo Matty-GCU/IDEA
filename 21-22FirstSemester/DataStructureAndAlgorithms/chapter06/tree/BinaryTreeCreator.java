@@ -10,11 +10,14 @@ public class BinaryTreeCreator {
      * 根据二叉树的广义表表示构建String型二叉树
      * 已测试
      */
-    private static int i = 0;
+    private static int size;
+    private static int i;
     public static BinaryTree<String> createByGenListStr(String genList) {
         BinaryTree<String> binaryTree = new BinaryTree<>();
+        size = 0;
         i = 0;
         binaryTree.root = create(genList);
+        binaryTree.size = size;
         return binaryTree;
     }
     private static BinaryNode<String> create(String genList) {
@@ -29,6 +32,7 @@ public class BinaryTreeCreator {
             }
             //没有遇到'^'说明，当前结点存在。（可能还有子树）
             p = new BinaryNode<>(ch + "");
+            size++;
             //遇到'('说明当前结点有子树。（可能只有左子树或右子树，也可能都有）
             if(i < genList.length() && genList.charAt(i) == '(') {
                 i++;    //跳过'('
