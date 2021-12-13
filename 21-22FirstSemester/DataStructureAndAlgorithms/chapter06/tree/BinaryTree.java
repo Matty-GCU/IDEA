@@ -1,11 +1,14 @@
 package chapter06.tree;
 
+import chapter04.stack.LinkedStack;
+import chapter04.stack.Stack;
+
 /**
  * @author Matty
  **/
 public class BinaryTree<T> {
 
-    private BinaryNode<T> root;
+    public BinaryNode<T> root;
 
     public BinaryTree() {}
 
@@ -17,10 +20,6 @@ public class BinaryTree<T> {
     public BinaryTree(T[] prelist) {
         root = create(prelist);
     }
-
-    /**
-     * 已测试
-     */
     private int i = 0;
     private BinaryNode<T> create(T[] prelist) {
         T data;
@@ -51,6 +50,13 @@ public class BinaryTree<T> {
         }
     }
 
+
+
+
+
+
+
+
     /**
      * 插入结点X情况2：X作为指定结点p的左或右孩子，原结点的原左或右结点作为X的左或右结点（见课本图6-7(b)）
      * 时间复杂度O(1)
@@ -79,6 +85,16 @@ public class BinaryTree<T> {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
     /**
      * 删除二叉树所有结点，包括根结点
      * 时间复杂度O(1)
@@ -94,16 +110,11 @@ public class BinaryTree<T> {
      * 已测试
      */
     public void preorder() {
-        System.out.println();
+        System.out.print("先根遍历二叉树：");
         preorder(root);
+        System.out.println();
     }
-
-    /**
-     * 先根遍历（前序遍历）特定二叉树
-     * 时间复杂度O(N)
-     * 已测试
-     */
-    public void preorder(BinaryNode<T> p) {
+    private void preorder(BinaryNode<T> p) {
         if(p != null) {
             System.out.print(p + "  ");
             preorder(p.left);
@@ -112,21 +123,46 @@ public class BinaryTree<T> {
     }
 
     /**
+     * 同上，先根遍历整个二叉树，不过用的是栈，没有递归
+     * 已测试
+     */
+    public void preorder2() {
+        System.out.print("先根遍历二叉树（非递归、带空子树）：");
+        Stack<BinaryNode<T>> stack = new LinkedStack<>();
+        BinaryNode<T> p = root;
+        //p不为空，说明p可以往下访问；
+        //p为空，只要栈不为空，就可以pop给p，p往回访问
+        while(p != null || !stack.isEmpty()) {
+            //p不为空，说明当前结点可以作为“根”。
+            //先根遍历就是“根->左->右”，那肯定先输出”根“，然后访问”左“
+            if(p != null) {
+                System.out.print(p);
+                stack.push(p);
+                p = p.left;
+            }
+            //p为空，说明当前结点是空结点，输出"^"
+            //回到p的父树（如果stack里有的话），再进入父树的右子树
+            else {
+                System.out.print("^");
+                p = stack.pop();
+                p = p.right;
+            }
+        }
+        //补上最后一次遍历p == null && stack.isEmpty()时的p
+        System.out.println("^");
+    }
+
+    /**
      * 中根遍历（中序遍历）整个二叉树
      * 时间复杂度O(N)
      * 已测试
      */
     public void inorder() {
-        System.out.println();
+        System.out.print("中根遍历二叉树：");
         inorder(root);
+        System.out.println();
     }
-
-    /**
-     * 中根遍历（中序遍历）特定二叉树
-     * 时间复杂度O(N)
-     * 已测试
-     */
-    public void inorder(BinaryNode<T> p) {
+    private void inorder(BinaryNode<T> p) {
         if(p != null) {
             inorder(p.left);
             System.out.print(p + "  ");
@@ -140,16 +176,11 @@ public class BinaryTree<T> {
      * 已测试
      */
     public void postorder() {
-        System.out.println();
+        System.out.print("后根遍历二叉树：");
         postorder(root);
+        System.out.println();
     }
-
-    /**
-     * 后根遍历（后序遍历）特定二叉树
-     * 时间复杂度O(N)
-     * 已测试
-     */
-    public void postorder(BinaryNode<T> p) {
+    private void postorder(BinaryNode<T> p) {
         if(p != null) {
             postorder(p.left);
             postorder(p.right);
@@ -157,12 +188,29 @@ public class BinaryTree<T> {
         }
     }
 
-    /**
-     * 层次遍历二叉树
-     */
-    public void levelorder() {
-
+    @Override
+    public String toString() {
+        return toGenListString();
     }
+
+    /**
+     * 返回二叉树的广义表表示字符串
+     * 已测试
+     */
+    public String toGenListString() {
+//        return "二叉树的广义表表示" + toGenListString(root);
+        return toGenListString(root);
+    }
+    private String toGenListString(BinaryNode<T> p) {
+        if(p == null) {
+            return null;
+        }
+        if(p.left == null && p.right == null) {
+            return p.toString();
+        }
+        return p.toString() + "(" + toGenListString(p.left) + ", " + toGenListString(p.right) + ")";
+    }
+
 
     //实验6要求：实现对生成的二叉树进行前序、中序、后序遍历，计算高度、节点总数、叶子节点数。
     //有一个insert和remove都还没测试，需要search方法支持
@@ -170,4 +218,9 @@ public class BinaryTree<T> {
 //    public int height() {}
 //    public BinaryNode<T> search(T key) {}
 
+//    /**
+//     * 层次遍历二叉树
+//     */
+//    public void levelorder() {
+//    }
 }
