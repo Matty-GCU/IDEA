@@ -63,5 +63,52 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <!-- 项目配置资源的配置 -->
+    <resources>
+      <resource>
+        <!-- 根据打包命令，自动获取env的值，生成用于不同环境的包 -->
+        <directory>src/main/resources/${env}</directory>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+          <include>**/*.tld</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
+
+  <!-- 打包环境的配置 -->
+  <profiles>
+
+    <!-- id为dev的profile -->
+    <profile>
+      <id>dev</id>
+      <properties>
+        <!-- env里面的值与环境的实际目录名相对应，便于打包时操作 -->
+        <env>dev</env>
+      </properties>
+      <!-- 是否将当前环境设为未指定环境时的默认打包环境 -->
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+
+    <profile>
+      <id>test</id>
+      <properties>
+        <env>test</env>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>product</id>
+      <properties>
+        <env>product</env>
+      </properties>
+    </profile>
+  </profiles>
+
 </project>
