@@ -2,6 +2,8 @@ package xyz.wuhang;
 
 import org.junit.jupiter.api.*;
 
+import java.util.LinkedList;
+
 @DisplayName("我的第一个测试用例")
 //假装它是用来测试XXX类的
 public class XXXTest {
@@ -43,5 +45,6 @@ public class XXXTest {
     @AfterAll
     static void tearDownAll() {
         System.out.println("在所有单元测试之后执行");
+        new LinkedList().push();
     }
 }
