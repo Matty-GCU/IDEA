@@ -1,9 +1,9 @@
-package xyz.wuhang.dao;
+package xyz.wuhang.mapper;
 
 import xyz.wuhang.pojo.User;
 
 import java.util.List;
 
 public interface UserMapper {
-    public List<User> getUserList();
+    List<User> getUserList();
 }

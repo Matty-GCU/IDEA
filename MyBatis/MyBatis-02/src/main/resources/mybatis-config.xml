@@ -7,7 +7,6 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <!-- 下面几个value要自己填 -->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306"/>
                 <property name="username" value="root"/>
@@ -15,8 +14,6 @@
             </dataSource>
         </environment>
     </environments>
-    <!-- 每一个Mapper都需要在这里注册！
-    才能使得sqlSession.getMapper(XXXMapper.class)时找得到与XXXMapper接口相对应的XXXMapper.xml（“接口实现类”） -->
     <mappers>
         <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>
     </mappers>
