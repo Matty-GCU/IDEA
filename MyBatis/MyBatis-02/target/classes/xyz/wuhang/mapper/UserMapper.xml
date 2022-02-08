@@ -2,48 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- namespace属性绑定一个对应的Dao/Mapper接口 -->
 <mapper namespace="xyz.wuhang.mapper.UserMapper">
-    <!-- id属性填的就是重写方法getUserList()的方法名 -->
-    <!-- resultType是最常用的 -->
-    <!-- resultType属性填的是重写方法返回类型List<User>的泛型参数，要用全限定类名 -->
     <select id="getUserList" resultType="xyz.wuhang.pojo.User">
-        select * from mybatis.user
+        select * from mybatis.user;
     </select>
-
-    <!-- 如果参数类型是基本类型，是可以不写的。 -->
-    <select id="getUserById" parameterType="int" resultType="xyz.wuhang.pojo.User">
-        select * from mybatis.user where id = #{id}
-    </select>
-
-    <!-- #{变量名}能够取出参数对象中的对应属性值，并且不依赖其getter方法（没有getter也不会报错） -->
-    <!-- insert标签没有resultType属性，因为它默认返回int。当然如果接口方法是void，那就不会返回-->
-    <insert id="addUser" parameterType="xyz.wuhang.pojo.User">
-        insert into mybatis.user (id, name, pwd) VALUE (#{id}, #{name}, #{pwd})
-    </insert>
-
-    <!-- 和insert标签一样，update标签也没有resultType属性，也默认返回int-->
-    <update id="updateUser" parameterType="xyz.wuhang.pojo.User">
-        update mybatis.user
-        set name = #{name}, pwd = #{pwd}
-        where id = #{id};
-    </update>
-
-    <!-- 这里的参数类型填map和实际上的参数名map没有任何关系，即使参数名为mapAAA，这里的参数类型也填map -->
-    <update id="updateUser2" parameterType="map">
-        update mybatis.user
-        set pwd = #{newPwd}
-        where id = #{userId};
-    </update>
-
-    <delete id="deleteUserById">
-        delete from mybatis.user where id = #{id}
-    </delete>
-
-    <!-- 参数只有一个并且是基本数据类型，可以省略不写 -->
-    <select id="getUserLike" resultType="xyz.wuhang.pojo.User">
-        <!-- 在MySQL中使用CONCAT函数拼接字符串 -->
-        select * from mybatis.user where name like concat(#{nameLike}, '%')
-    </select>
-
 </mapper>

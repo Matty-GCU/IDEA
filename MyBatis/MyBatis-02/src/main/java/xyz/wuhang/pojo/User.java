@@ -1,5 +1,8 @@
 package xyz.wuhang.pojo;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("AliasOfUser")
 public class User {
     private int id;
     private String name;
