@@ -5,9 +5,17 @@
 <configuration>
     <properties resource="db.properties"/>
 
+    <settings>
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+        <setting name="logImpl" value="NO_LOGGING"/>
+    </settings>
+
     <typeAliases>
-<!--        <typeAlias type="xyz.wuhang.pojo.User" alias="User"/>-->
-        <package name="xyz.wuhang.pojo"/>
+<!--        <package name="xyz.wuhang.pojo"/>-->
+        <typeAlias type="xyz.wuhang.pojo.User" alias="User"/>
+        <!-- namespace好像没法用这个别名，会报错说UserMapper未注册 -->
+        <!-- <typeAlias type="xyz.wuhang.mapper.UserMapper" alias="UserMapper"/> -->
     </typeAliases>
     
     <environments default="test">
@@ -31,7 +39,10 @@
         </environment>
     </environments>
 
+<!--    <mappers>-->
+<!--        <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>-->
+<!--    </mappers>-->
     <mappers>
-        <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>
+        <mapper class="xyz.wuhang.mapper.UserMapper"/>
     </mappers>
 </configuration>

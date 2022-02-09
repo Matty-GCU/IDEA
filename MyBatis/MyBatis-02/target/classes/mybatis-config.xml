@@ -5,19 +5,44 @@
 <configuration>
     <properties resource="db.properties"/>
 
-    <environments default="development">
-        <environment id="development">
+    <settings>
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+        <setting name="logImpl" value="NO_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+<!--        <package name="xyz.wuhang.pojo"/>-->
+        <typeAlias type="xyz.wuhang.pojo.User" alias="User"/>
+        <!-- namespace好像没法用这个别名，会报错说UserMapper未注册 -->
+        <!-- <typeAlias type="xyz.wuhang.mapper.UserMapper" alias="UserMapper"/> -->
+    </typeAliases>
+    
+    <environments default="test">
+        <environment id="test">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
-                <property name="username" value="${myUserName}"/>
-                <property name="password" value="${myPassword}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
 
+<!--    <mappers>-->
+<!--        <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>-->
+<!--    </mappers>-->
     <mappers>
-        <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>
+        <mapper class="xyz.wuhang.mapper.UserMapper"/>
     </mappers>
 </configuration>

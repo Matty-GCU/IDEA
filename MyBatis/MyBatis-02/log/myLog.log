@@ -1,0 +1,126 @@
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 24097622.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]==>  Preparing: select * from mybatis.user;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]==> Parameters: 
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]<==      Total: 8
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 24097622 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 24097622.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]==>  Preparing: select * from mybatis.user;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]==> Parameters: 
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserList]<==      Total: 8
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@16fb356]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 24097622 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1395073533.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@532721fd]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByLimit]==>  Preparing: select * from mybatis.user limit ?, ?;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByLimit]==> Parameters: 0(Integer), 5(Integer)
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByLimit]<==      Total: 5
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@532721fd]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@532721fd]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 1395073533 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1764291958.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==>  Preparing: select * from mybatis.user;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==> Parameters: 
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 1764291958 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1764291958.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==>  Preparing: select * from mybatis.user;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==> Parameters: 
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 1764291958 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1764291958.
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==>  Preparing: select * from mybatis.user;
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapper.getUserByRowBounds]==> Parameters: 
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6928f576]
+[DEBUG][22-02-08][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 1764291958 to pool.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-08][xyz.wuhang.dao.UserMapperTest]info: log4jTest
+[DEBUG][22-02-08][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
+[ERROR][22-02-08][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
