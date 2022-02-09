@@ -100,27 +100,31 @@
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
-[INFO][22-02-08][xyz.wuhang.dao.UserMapperTest]info: log4jTest
-[DEBUG][22-02-08][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
-[ERROR][22-02-08][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[INFO][22-02-08][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-08][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-08][xyz.wuhang.mapper.UserMapperTest]error: log4jTest
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-08][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
-[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
-[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
-[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[INFO][22-02-09][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.mapper.UserMapperTest]error: log4jTest
 [DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
-[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
-[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
-[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
+[INFO][22-02-09][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.mapper.UserMapperTest]error: log4jTest
 [DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
-[INFO][22-02-09][xyz.wuhang.dao.UserMapperTest]info: log4jTest
-[DEBUG][22-02-09][xyz.wuhang.dao.UserMapperTest]debug: log4jTest
-[ERROR][22-02-09][xyz.wuhang.dao.UserMapperTest]error: log4jTest
-[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
-[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-09][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.mapper.UserMapperTest]error: log4jTest
 [DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
 [DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-02-09][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-09][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-09][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-09][xyz.wuhang.mapper.UserMapperTest]error: log4jTest

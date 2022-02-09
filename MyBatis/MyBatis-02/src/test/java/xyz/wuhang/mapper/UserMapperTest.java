@@ -1,10 +1,9 @@
-package xyz.wuhang.dao;
+package xyz.wuhang.mapper;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.*;
-import xyz.wuhang.mapper.UserMapper;
 import xyz.wuhang.pojo.User;
 import xyz.wuhang.utils.MyBatisUtils;
 
