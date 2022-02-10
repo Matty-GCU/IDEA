@@ -14,7 +14,9 @@
     <modules>
         <module>MyBatis-01</module>
         <module>MyBatis-02</module>
-        <module>MyBatis-03</module>
+        <module>MyBatis-04</module>
+        <module>MyBatis-05</module>
+        <module>MyBatis-06</module>
     </modules>
 
     <properties>
@@ -46,6 +48,24 @@
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 </project>

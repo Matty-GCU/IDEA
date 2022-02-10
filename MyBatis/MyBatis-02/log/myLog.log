@@ -128,3 +128,7 @@
 [INFO][22-02-09][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
 [DEBUG][22-02-09][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
 [ERROR][22-02-09][xyz.wuhang.mapper.UserMapperTest]error: log4jTest
+[DEBUG][22-02-10][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][22-02-10][xyz.wuhang.mapper.UserMapperTest]info: log4jTest
+[DEBUG][22-02-10][xyz.wuhang.mapper.UserMapperTest]debug: log4jTest
+[ERROR][22-02-10][xyz.wuhang.mapper.UserMapperTest]error: log4jTest

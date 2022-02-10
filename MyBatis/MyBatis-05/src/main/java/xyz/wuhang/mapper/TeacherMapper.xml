@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.wuhang.mapper.TeacherMapper">
+
+    <select id="getTeacherById" resultMap="TeacherResultMap">
+        select *
+        from mybatis.teacher t, mybatis.student s
+        where t.tchId = #{tchId} and s.tchId = t.tchId
+    </select>
+    <resultMap id="TeacherResultMap" type="Teacher">
+        <id property="tchId" column="tchId"/>
+        <result property="tchName" column="tchName"/>
+        <collection property="students" javaType="arraylist" ofType="Student">
+            <id property="stuId" column="stuId"/>
+            <result property="stuName" column="stuName"/>
+            <result property="tchId" column="tchId"/>
+        </collection>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.wuhang.mapper.StudentMapper">
+
+    <select id="getAllStudents" resultMap="StudentAndTeacher">
+#          select stuId, stuName, tchId from mybatis.student
+        select * from mybatis.student
+    </select>
+
+    <resultMap id="StudentAndTeacher" type="Student">
+        <!-- 对于列名与对象的属性名同名的情况，不需要专门指定，MyBatis就会自动匹配，把前者的值赋给后者。 -->
+        <result column="stuId" property="stuId"/>
+        <result column="stuName" property="stuName"/>
+        <!-- SQL语句查到了tchId的值，但是Student没有同名属性，那么这个值用来干嘛呢？
+        用来作为子查询的匹配条件。MyBatis会自动填入tchId的值到#{这里填什么都行，反正都会被替换成tchId的值}。
+        而子查询的查到的tchId和tchName，将会被赋值给Teacher对象的同名属性，而这个对象又会被返回到父查询，成为Student的teacher属性-->
+        <association column="tchId" property="teacher" javaType="Teacher" select="getTeacherById"/>
+    </resultMap>
+
+    <!-- 子查询 -->
+    <select id="getTeacherById" resultType="Teacher">
+        <!-- 事实上#{}里面填什么都行，MyBatis会自动匹配成#{tchId}。但是where不能不写，否则报错。 -->
+        select * from mybatis.teacher where tchId = #{tchId}
+    </select>
+
+
+    <!-- 事实上这条SQL语句已经从数据库把我们想要的数据拿过来了，但是这些数据并没有被正确地赋值 -->
+    <select id="getAllStudents2" resultMap="StudentAndTeacher2">
+#         select s.stuId, s.stuName, s.tchId, t.tchName
+        select *
+        from mybatis.student s, mybatis.teacher t
+        where s.tchId = t.tchId
+    </select>
+
+    <resultMap id="StudentAndTeacher2" type="Student">
+        <!-- 对于列名与对象的属性名同名的情况，不需要专门指定，MyBatis就会自动匹配，把前者的值赋给后者。 -->
+        <result column="stuId" property="stuId"/>
+        <result column="stuName" property="stuName"/>
+        <!-- 告诉MyBatis，返回类型Student关联了其他类型，
+        具体来说就是，Student有一个teacher属性实际上是Teacher对象（不指出javaType也行，MyBatis会自动检测）-->
+<!--        <association property="teacher" javaType="Teacher">-->
+<!--            &lt;!&ndash; 告诉MyBatis，把SQL语句拿到的tchId和tchName的值分别赋值给teacher的同名属性 &ndash;&gt;-->
+<!--            <result column="tchId" property="tchId"/>-->
+<!--            <result column="tchName" property="tchName"/>-->
+<!--        </association>-->
+        <result column="tchId" property="teacher.tchId"/>
+        <result column="tchName" property="teacher.tchName"/>
+    </resultMap>
+
+</mapper>
