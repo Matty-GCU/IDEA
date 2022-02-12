@@ -3,25 +3,28 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
-        <setting name="cacheEnabled" value="true"/>
     </settings>
+
+    <typeAliases>
+        <typeAlias type="xyz.wuhang.pojo.Blog" alias="Blog"/>
+    </typeAliases>
+    
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <!-- 下面几个value要自己填 -->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
                 <property name="username" value="root"/>
                 <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
-    <!-- 每一个Mapper都需要在这里注册！
-    才能使得sqlSession.getMapper(XXXMapper.class)时找得到与XXXMapper接口相对应的XXXMapper.xml（“接口实现类”） -->
+
     <mappers>
-        <mapper resource="xyz/wuhang/mapper/UserMapper.xml"/>
+        <mapper resource="xyz/wuhang/mapper/BlogMapper.xml"/>
     </mappers>
 </configuration>

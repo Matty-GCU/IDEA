@@ -3,6 +3,7 @@ package xyz.wuhang.mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import xyz.wuhang.pojo.User;
 import xyz.wuhang.utils.MyBatisUtils;
@@ -16,10 +17,38 @@ class UserMapperTest {
     SqlSession sqlSession;
     UserMapper userMapper;
 
-    @BeforeEach
-    void initTest() {
-        sqlSession = MyBatisUtils.getSqlSession();
-        userMapper = sqlSession.getMapper(UserMapper.class);
+//    @BeforeEach
+//    void initTest() {
+//        sqlSession = MyBatisUtils.getSqlSession();
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+//    }
+
+//    @AfterEach
+//    void closeTest() {
+//        sqlSession.commit();
+//        sqlSession.close();
+//    }
+
+    @Test
+    @DisplayName("缓存测试")
+    void cacheTest() {
+        SqlSession session1 = MyBatisUtils.getSqlSession();
+        UserMapper mapper1 = session1.getMapper(UserMapper.class);
+        User user1 = mapper1.getUserById(1);
+//        session1.close();
+
+        System.out.println("==============");
+        SqlSession session2 = MyBatisUtils.getSqlSession();
+        UserMapper mapper2 = session2.getMapper(UserMapper.class);
+        System.out.println("==============");
+        mapper2.getUserById(1);
+        mapper2.getUserById(1);
+        mapper2.getUserById(1);
+        mapper2.getUserById(1);
+        mapper2.getUserById(1);
+//        System.out.println(user1 == user2);
+        System.out.println("==============");
+        session2.close();
     }
 
     @Test
@@ -40,8 +69,7 @@ class UserMapperTest {
 
     @Test
     void getUserByIdTest() {
-        User user = userMapper.getUserById(7);
-        System.out.println(user);
+        System.out.println(userMapper.getUserById(1));
     }
 
     @Test
@@ -64,10 +92,5 @@ class UserMapperTest {
         System.out.println(userMapper.deleteUserById(5));
     }
 
-    @AfterEach
-    void closeTest() {
-        sqlSession.commit();
-        sqlSession.close();
-    }
 
 }

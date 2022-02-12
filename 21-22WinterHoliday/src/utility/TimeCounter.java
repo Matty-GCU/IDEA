@@ -3,14 +3,20 @@ package utility;
 import java.util.Scanner;
 
 /**
- * v0.1 2022/01/24
+ * v0.1 2022/01/24创建
  * v0.2 2022/02/06更新  增加对单独输入小时或分钟的支持；增加无限重新开始的功能；优化统计结果的显示，为个位数的分钟数增加前缀0。
+ * v0.3 2022/02/12更新  针对总时间为0、分钟数为0、小时数为0等特殊情况，优化统计结果的显示细节；加上try-catch语句，增强程序的容错性。
  */
 public class TimeCounter {
 
     public static void main(String[] args) {
         while(true) {
-            count();
+            try {
+                count();
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -24,16 +30,14 @@ public class TimeCounter {
             String str = scanner.nextLine();
             //输入=表示完成录入，输出统计结果
             if("=".equals(str)) {
-                System.out.print((minuteSum / 60) + "h");
-                System.out.println(((minuteSum % 60) < 10 ? "0" : "") + (minuteSum % 60) + "min");
-                int minuteAvg = minuteSum / 7;
-                System.out.println("7天日均" + (minuteAvg / 60) + "h" + (minuteAvg % 60) + "min");
-                double minuteAvg2 = minuteSum / 3.5;
-                System.out.println("7天两日均" + (int)(minuteAvg2 / 60) + "h" + (int)(minuteAvg2 % 60) + "min");
+                System.out.println(format(minuteSum));
+                System.out.println("7天日均" + format(minuteSum / 7));
+                System.out.println("7天两日均" + format(minuteSum / 3.5));
                 break;
             }
-            //获取输入的时长
+            //获取输入时间
             String[] hourAndMinute = str.split("h");
+            //仅输入小时或分钟
             if(hourAndMinute.length == 1) {
                 //仅输入小时（格式如：1h）
                 if(str.contains("h")) {
@@ -51,5 +55,25 @@ public class TimeCounter {
             }
             System.out.println("+");
         }
+    }
+
+    public static String format(double minutes) {
+        return format((int) minutes);
+    }
+
+    public static String format(int minutes) {
+        if(minutes == 0) {
+            return "0min";
+        }
+        int h = minutes / 60;
+        int minute = minutes % 60;
+        String result = "";
+        if(h != 0) {
+            result += h + "h";
+        }
+        if(minute != 0) {
+            result += (minute < 10 ? "0" : "") + minute + "min";
+        }
+        return result;
     }
 }

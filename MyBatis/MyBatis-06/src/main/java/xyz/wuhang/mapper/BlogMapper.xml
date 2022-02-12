@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.wuhang.mapper.BlogMapper">
+    <!-- 注意别写成select标签了-->
+    <insert id="addBlog" parameterType="Blog">
+        insert into mybatis.blog(id, title, author, create_time, views)
+        VALUE (#{id}, #{title}, #{author}, #{createTime}, #{views});
+    </insert>
+
+<!--    <select id="getBlogs" resultType="Blog" parameterType="map">-->
+<!--        select *-->
+<!--        from mybatis.blog-->
+<!--        <where>-->
+<!--            <if test="blogTitle != null">-->
+<!--                &lt;!&ndash; 这里的SQL语句（片段）前面加不加and都行，where标签会自动处理，-->
+<!--                但后面不能乱加and，因为where标签只能处理前缀的and或者or &ndash;&gt;-->
+<!--                title like concat('%', #{blogTitle}, '%')-->
+<!--            </if>-->
+<!--            <if test="blogAuthor != null">-->
+<!--                &lt;!&ndash; 这里的SQL语句（片段）前面加不加and都行，where标签会自动处理，-->
+<!--                    但后面不能乱加and，因为where标签只能处理前缀的and或者or &ndash;&gt;-->
+<!--                and author like concat('%', #{blogAuthor}, '%')-->
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    <select id="getBlogs" resultType="Blog" parameterType="map">-->
+<!--        select *-->
+<!--        from mybatis.blog-->
+
+<!--        <where>-->
+<!--            <include refid="if-title-author"/>-->
+<!--        </where>-->
+<!--    </select>-->
+
+    <select id="getBlogsByForEach" resultType="Blog" parameterType="list">
+        select *
+        from mybatis.blog
+        where id in
+        <!-- 注意collection如果等于"参数名blogIds"会报错，
+        因为【List型参数】的【默认参数名】是【list】，Collection参数默认叫collection，第一个参数默认叫arg0。
+        这里可以用参数名list、collection或者arg0；如果想用自定义的参数名，需要加@Param-->
+        <foreach collection="collection" item="blogId" open="(" separator="," close=")">
+            #{blogId}
+        </foreach>
+    </select>
+
+    <sql id="if-title-author">
+        <if test="blogTitle != null">
+            title like concat('%', #{blogTitle}, '%')
+        </if>
+        <if test="blogAuthor != null">
+            and author like concat('%', #{blogAuthor}, '%')
+        </if>
+    </sql>
+
+    <update id="updateBlog" parameterType="map">
+        update mybatis.blog
+        <set>
+            <if test="blogTitle != null">
+                <!-- 这里的SQL语句（片段）后面加不加逗号都行，set标签会自动处理，
+                但前面不能乱加逗号，因为set只能处理后缀的逗号 -->
+                title = #{blogTitle}
+            </if>
+            <if test="blogAuthor != null">
+                <!-- 这里的SQL语句（片段）后面加不加逗号都行，set标签会自动处理，
+                但前面不能乱加逗号，因为set只能处理后缀的逗号 -->
+                <!-- 如果这一句的前缀加1个逗号会怎样？
+                如果blogTitle和blogAuthor都不为空，并且上一句没加后缀的逗号的话，那也是可以的。
+                因为两个SQL片段自然拼接起来刚刚好，那么并不需要“处理后缀”。
+                如果这一句的前缀加2个逗号会怎样？
+                由于这两个SQL片段无法自然拼接，但是set标签无法处理前缀，只会处理后缀（准确的说是只能增加或者删除SQL片段的后缀）所以会报错。-->
+                ,author = #{blogAuthor}
+            </if>
+        </set>
+        where id = #{blogId}
+    </update>
+
+
+</mapper>
