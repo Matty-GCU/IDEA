@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.PassagerMapper">
+
+    <insert id="register">
+        insert into dsaa_test.passagers(id, name, pwd) VALUE (#{id}, #{name}, #{pwd});
+    </insert>
+
+    <select id="login" resultType="Passager">
+        select * from passagers where id = #{id} and pwd = #{pwd};
+    </select>
+
+
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.DriverMapper">
+
+    <insert id="register">
+        insert into dsaa_test.drivers(id, name, pwd, drivingAge) VALUE (#{id}, #{name}, #{pwd}, #{drivingAge});
+    </insert>
+
+    <select id="login" resultType="Driver">
+        select * from drivers where id = #{id} and pwd = #{pwd}
+    </select>
+
+</mapper>

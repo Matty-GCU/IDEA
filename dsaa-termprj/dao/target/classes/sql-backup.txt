@@ -1,0 +1,16 @@
+use dsaa_test;
+
+drop table passagers;
+create table passagers (
+    id bigint(11) not null primary key,
+    name varchar(20),
+    pwd varchar(50) not null
+);
+
+drop table drivers;
+create table drivers (
+    id bigint(11) not null primary key,
+    name varchar(20),
+    pwd varchar(50) not null,
+    drivingAge int(2)
+);
