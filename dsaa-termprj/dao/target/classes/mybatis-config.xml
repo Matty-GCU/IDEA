@@ -13,6 +13,7 @@
     <typeAliases>
         <typeAlias type="pojo.Passager" alias="Passager"/>
         <typeAlias type="pojo.Driver" alias="Driver"/>
+        <typeAlias type="pojo.Car" alias="Car"/>
     </typeAliases>
 
     <environments default="test">

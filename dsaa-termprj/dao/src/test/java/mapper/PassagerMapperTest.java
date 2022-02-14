@@ -9,9 +9,6 @@ import pojo.Passager;
 import util.ApplicationUtil;
 import util.MyBatisUtil;
 
-import java.util.Random;
-
-
 class PassagerMapperTest {
 
     SqlSession sqlSession;
@@ -25,25 +22,30 @@ class PassagerMapperTest {
 
     @AfterEach
     void tearDown() {
-        sqlSession.commit();
         sqlSession.close();
     }
 
     @Test
     void register() {
-        Random random = new Random();
-//        long id = 13417143272L;
-        long id = random.nextLong();
+//        Random random = new Random();
+        long id = 13417143272L;
         String name = "小吴";
         String pwd = ApplicationUtil.encryptPwd("123456");
+        Assertions.assertEquals(passagerMapper.register(id, name, pwd), 1);
+        id = 15876597212L;
+        name = "小黄";
+        pwd = ApplicationUtil.encryptPwd("111111");
         Assertions.assertEquals(passagerMapper.register(id, name, pwd), 1);
     }
 
     @Test
     void login() {
         Passager passager = passagerMapper.login(13417143272L, ApplicationUtil.encryptPwd("123456"));
-        ApplicationUtil.setRandomLocation(passager);
         Assertions.assertNotNull(passager);
+        ApplicationUtil.setRandomLocation(passager);
+        passager = passagerMapper.login(15876597212L, ApplicationUtil.encryptPwd("111111"));
+        Assertions.assertNotNull(passager);
+        ApplicationUtil.setRandomLocation(passager);
     }
 
 }

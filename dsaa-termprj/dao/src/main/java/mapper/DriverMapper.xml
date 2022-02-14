@@ -5,11 +5,24 @@
 <mapper namespace="mapper.DriverMapper">
 
     <insert id="register">
-        insert into dsaa_test.drivers(id, name, pwd, drivingAge) VALUE (#{id}, #{name}, #{pwd}, #{drivingAge});
+        insert into dsaa_test.drivers(id, name, pwd, drivingAge)
+        VALUE (#{id}, #{name}, #{pwd}, #{drivingAge});
     </insert>
 
-    <select id="login" resultType="Driver">
-        select * from drivers where id = #{id} and pwd = #{pwd}
+<!--    <select id="login" resultType="Driver">-->
+<!--        select * from drivers where id = #{id} and pwd = #{pwd}-->
+<!--    </select>-->
+    <select id="login" resultMap="DriverResultMap">
+        select * from drivers d, cars c
+        where d.id = #{id} and d.pwd = #{pwd}
+    </select>
+    <resultMap id="DriverResultMap" type="Driver">
+        <result property="car.carId" column="carId"/>
+        <result property="car.driverId" column="driverId"/>
+    </resultMap>
+
+    <select id="searchAll" resultType="Driver">
+        select * from drivers
     </select>
 
 </mapper>

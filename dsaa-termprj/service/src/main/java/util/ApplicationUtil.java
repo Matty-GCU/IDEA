@@ -1,6 +1,6 @@
 package util;
 
-import pojo.Driver;
+import pojo.Car;
 import pojo.Passager;
 
 import java.nio.charset.StandardCharsets;
@@ -30,9 +30,9 @@ public class ApplicationUtil {
         passager.setY(random.nextInt(100));
     }
 
-    public static void setRandomLocation(Driver driver) {
+    public static void setRandomLocation(Car car) {
         Random random = new Random();
-        driver.setX(random.nextInt(100));
-        driver.setY(random.nextInt(100));
+        car.setX(random.nextInt(100));
+        car.setY(random.nextInt(100));
     }
 }

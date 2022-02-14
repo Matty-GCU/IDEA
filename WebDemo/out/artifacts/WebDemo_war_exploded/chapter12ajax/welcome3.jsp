@@ -18,7 +18,6 @@
             xmlHttp.onreadystatechange = function() {
                 //依次输出2 3 4，即响应onreadystatechange事件的函数运行了三次（readyState从0变1的那次，程序还没跑到这里，所以没有输出1）
                 // document.writeln(xmlHttp.readyState);
-                infoDiv.innerHTML += xmlHttp.readyState;
                 if(xmlHttp.readyState == 4) {
                     infoDiv.innerHTML = xmlHttp.responseText;
                 }

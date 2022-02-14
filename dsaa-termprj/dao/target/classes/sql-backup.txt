@@ -7,6 +7,8 @@ create table passagers (
     pwd varchar(50) not null
 );
 
+alter table cars drop constraint fk_car_driver;
+
 drop table drivers;
 create table drivers (
     id bigint(11) not null primary key,
@@ -14,3 +16,18 @@ create table drivers (
     pwd varchar(50) not null,
     drivingAge int(2)
 );
+
+drop table cars;
+create table cars (
+    carId varchar(10) not null primary key,
+    driverId bigint(11) not null,
+    constraint fk_car_driver foreign key (driverId) references drivers(id)
+);
+
+
+
+# select * from drivers d, cars c
+# where d.id = 83384123 and d.id = c.driverId;
+#
+# select * from drivers;
+# select * from cars;
