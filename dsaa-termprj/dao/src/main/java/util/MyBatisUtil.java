@@ -10,6 +10,9 @@ import java.io.InputStream;
 
 public class MyBatisUtil {
 
+    /**
+     * 单例模式
+     */
     static SqlSessionFactory sessionFactory;
 
     public static SqlSession getSqlSession() {

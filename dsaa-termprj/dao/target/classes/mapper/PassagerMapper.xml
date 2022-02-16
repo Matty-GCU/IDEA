@@ -5,12 +5,14 @@
 <mapper namespace="mapper.PassagerMapper">
 
     <insert id="register">
-        insert into dsaa_test.passagers(id, name, pwd) VALUE (#{id}, #{name}, #{pwd});
+        insert into passagers(id, name, pwd) VALUE (#{id}, #{name}, #{pwd});
     </insert>
 
-    <select id="login" resultType="Passager">
-        select * from passagers where id = #{id} and pwd = #{pwd};
+    <update id="login">
+        update passagers set isOnline = true where id = #{id} and pwd = #{pwd};
+    </update>
+
+    <select id="getAllOnline" resultType="Passager">
+        select * from passagers where isOnline = true;
     </select>
-
-
 </mapper>

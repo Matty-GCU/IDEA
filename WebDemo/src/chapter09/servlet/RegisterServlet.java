@@ -6,6 +6,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ScheduledExecutorService;
 
 @WebServlet(urlPatterns = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -20,11 +22,5 @@ public class RegisterServlet extends HttpServlet {
         printWriter.println("<title>RegisterServlet</title>");
         String stuName = request.getParameter("stuName");
         System.out.println("学生姓名：" + stuName);
-        while(true) {
-            for(long i = 0; i < 10000000000000000L; i++) {
-
-            }
-            printWriter.println("test11111111111");
-        }
     }
 }

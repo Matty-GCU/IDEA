@@ -9,6 +9,8 @@ import pojo.Passager;
 import util.ApplicationUtil;
 import util.MyBatisUtil;
 
+import java.util.List;
+
 class PassagerMapperTest {
 
     SqlSession sqlSession;
@@ -27,25 +29,24 @@ class PassagerMapperTest {
 
     @Test
     void register() {
-//        Random random = new Random();
-        long id = 13417143272L;
-        String name = "小吴";
         String pwd = ApplicationUtil.encryptPwd("123456");
-        Assertions.assertEquals(passagerMapper.register(id, name, pwd), 1);
-        id = 15876597212L;
-        name = "小黄";
+        Assertions.assertEquals(passagerMapper.register(13417143272L, "小吴", pwd), 1);
         pwd = ApplicationUtil.encryptPwd("111111");
-        Assertions.assertEquals(passagerMapper.register(id, name, pwd), 1);
+        Assertions.assertEquals(passagerMapper.register(15876597212L, "小黄", pwd), 1);
     }
 
     @Test
     void login() {
-        Passager passager = passagerMapper.login(13417143272L, ApplicationUtil.encryptPwd("123456"));
-        Assertions.assertNotNull(passager);
-        ApplicationUtil.setRandomLocation(passager);
-        passager = passagerMapper.login(15876597212L, ApplicationUtil.encryptPwd("111111"));
-        Assertions.assertNotNull(passager);
-        ApplicationUtil.setRandomLocation(passager);
+        Assertions.assertEquals(passagerMapper.login(13417143272L, ApplicationUtil.encryptPwd("123456")), 1);
+        Assertions.assertEquals(passagerMapper.login(15876597212L, ApplicationUtil.encryptPwd("111111")), 1);
+    }
+
+    @Test
+    void getAll() {
+        List<Passager> allOnline = passagerMapper.getAllOnline();
+        for(Passager passager : allOnline) {
+            System.out.println(passager);
+        }
     }
 
 }

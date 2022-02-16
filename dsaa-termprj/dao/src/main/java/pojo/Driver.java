@@ -12,5 +12,4 @@ public class Driver {
     String name;
     String pwd;
     int drivingAge;
-    Car car;
 }

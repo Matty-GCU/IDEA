@@ -1,25 +1,17 @@
 package mapper;
 
 import org.apache.ibatis.annotations.Param;
-import pojo.Driver;
-
-import java.util.List;
 
 public interface DriverMapper {
 
     /**
-     * insert
+     * 司机注册
      */
     int register(@Param("id") long id, @Param("name") String name, @Param("pwd") String pwd, @Param("drivingAge") int drivingAge);
 
     /**
-     * select one record
+     * 司机登录，即开车上路接单（该司机必须拥有已注册车辆才能登录成功）
      */
-    Driver login(@Param("id") long id, @Param("pwd") String pwd);
-
-    /**
-     * select all records
-     */
-    List<Driver> searchAll();
+    int login(@Param("id") long id, @Param("pwd") String pwd);
 
 }

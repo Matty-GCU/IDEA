@@ -8,8 +8,8 @@
         insert into cars (carId, driverId) VALUE (#{carId}, #{driverId})
     </insert>
 
-    <select id="searchAll" resultType="Car">
-        select * from cars
+    <select id="getAllOnline" resultType="Car">
+        select * from cars where isOnline = true;
     </select>
 
 </mapper>

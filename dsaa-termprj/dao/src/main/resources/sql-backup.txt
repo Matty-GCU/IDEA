@@ -4,7 +4,8 @@ drop table passagers;
 create table passagers (
     id bigint(11) not null primary key,
     name varchar(20),
-    pwd varchar(50) not null
+    pwd varchar(50) not null,
+    isOnline boolean default false
 );
 
 alter table cars drop constraint fk_car_driver;
@@ -21,7 +22,8 @@ drop table cars;
 create table cars (
     carId varchar(10) not null primary key,
     driverId bigint(11) not null,
-    constraint fk_car_driver foreign key (driverId) references drivers(id)
+    constraint fk_car_driver foreign key (driverId) references drivers(id),
+    isOnline boolean default false
 );
 
 

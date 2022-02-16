@@ -1,17 +1,16 @@
 package util;
 
-import pojo.Car;
-import pojo.Passager;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Random;
 
-public class ApplicationUtil {
+public class PasswordUtil {
 
     static MessageDigest messageDigest;
 
+    /**
+     * 使用SHA-256算法对密码进行安全的单向加密，避免明文存储密码。
+     */
     public static String encryptPwd(String originalPwd) {
         if(messageDigest == null) {
             try {
@@ -24,15 +23,4 @@ public class ApplicationUtil {
         return new String(messageDigest.digest(), StandardCharsets.UTF_8);
     }
 
-    public static void setRandomLocation(Passager passager) {
-        Random random = new Random();
-        passager.setX(random.nextInt(100));
-        passager.setY(random.nextInt(100));
-    }
-
-    public static void setRandomLocation(Car car) {
-        Random random = new Random();
-        car.setX(random.nextInt(100));
-        car.setY(random.nextInt(100));
-    }
 }

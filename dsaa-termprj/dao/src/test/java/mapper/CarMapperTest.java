@@ -28,14 +28,16 @@ class CarMapperTest {
     @Test
     void register() {
         //先注册司机！再注册车！
-        Assertions.assertEquals(carMapper.register("粤A-123456", 83384123), 1);
+        Assertions.assertEquals(carMapper.register("粤A-83384", 83384123), 1);
+        Assertions.assertEquals(carMapper.register("粤A-1234510", 83312345), 1);
     }
 
     @Test
-    void searchAll() {
-        List<Car> cars = carMapper.searchAll();
-        for(Car car : cars) {
+    void selectAll() {
+        List<Car> allOnline = carMapper.getAllOnline();
+        for(Car car : allOnline) {
             System.out.println(car);
         }
     }
+
 }
