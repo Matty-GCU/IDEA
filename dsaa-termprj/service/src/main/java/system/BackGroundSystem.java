@@ -9,7 +9,7 @@ import util.MyBatisUtil;
 
 import java.util.List;
 
-public class ControllingSystem {
+public class BackGroundSystem {
 
     SqlSession sqlSession;
     CarMapper carMapper;
@@ -20,11 +20,14 @@ public class ControllingSystem {
     /**
      * 初始化系统
      */
-    public ControllingSystem() {
+    public BackGroundSystem() {
+        System.out.println("正在初始化...");
         sqlSession = MyBatisUtil.getSqlSession();
         carMapper = sqlSession.getMapper(CarMapper.class);
         passagerMapper = sqlSession.getMapper(PassagerMapper.class);
-        updateAllOnline();
+        System.out.println("初始化成功。");
+        System.out.println("===============================");
+        System.out.println("欢迎进入网约车管理系统！");
     }
 
     /**
@@ -43,7 +46,7 @@ public class ControllingSystem {
             }
             for(Car car : currCars) {
                 car.start(100);
-                System.out.println("【新增】车辆" + car.getCarId() + "进入系统，正在自动匹配接单...车辆当前位置：" + car.getDirectionAndSpeed());
+                System.out.println("【新增】车辆" + car.getCarId() + "进入系统，正在自动匹配接单...车辆当前位置：" + car.getDirection());
             }
         }
         //系统里已有一定乘客和车辆，此时需要检查是否有新增的
@@ -71,7 +74,7 @@ public class ControllingSystem {
                 }
                 if(isNew) {
                     newCar.start(100);
-                    System.out.println("【新增】车辆" + newCar.getCarId() + "进入系统，正在自动匹配接单...车辆当前位置：" + newCar.getDirectionAndSpeed());
+                    System.out.println("【新增】车辆" + newCar.getCarId() + "进入系统，正在自动匹配接单...车辆当前位置：" + newCar.getDirection());
                 }
             }
         }
@@ -82,7 +85,10 @@ public class ControllingSystem {
      * 模拟系统开始运行
      */
     public void play() {
+        System.out.println("===============================");
+        System.out.println("进入网约车运营系统！");
         while(true) {
+            System.out.println("================================================================================");
             try {
                 Thread.sleep(1000);
             } catch(InterruptedException e) {
@@ -93,7 +99,6 @@ public class ControllingSystem {
 
 
 
-            
             for(Passager passager : passagers) {
                 System.out.print("乘客" + passager.getName() + (passager.isCalling() ? "正在约车..." : "【已经约到车了】。"));
                 System.out.println("他当前的位置是" + passager.getDirection());
@@ -132,7 +137,7 @@ public class ControllingSystem {
                 StringBuffer str = new StringBuffer();
                 str.append("车辆" + car.getCarId());
                 if(car.getPassager() == null) {
-                    str.append("正在等待接单...");
+                    str.append("正在接单...");
                 }
                 else {
                     str.append("【已接单】，");
@@ -144,9 +149,9 @@ public class ControllingSystem {
                     }
                 }
                 str.append("它目前的位置是");
-                str.append(car.getDirectionAndSpeed());
+                str.append(car.getDirection());
                 str.append("，速度为");
-                str.append(car.isHeadingForPassager() ? "1.44" : car.getSpeedPerSecond());
+                str.append(car.isHeadingForPassager() ? "1~1.44" : car.getSpeedPerSecond());
                 str.append("单位每秒。");
                 System.out.println(str);
             }

@@ -21,15 +21,13 @@ public class Car {
     boolean headingForPassager;
     Passager passager;
 
-    public String getDirectionAndSpeed() {
+    public String getDirection() {
         StringBuffer str = new StringBuffer();
         str.append("(");
         str.append(x);
         str.append(", ");
         str.append(y);
-        str.append(")，速度为");
-        str.append(speedPerSecond);
-        str.append("单位距离每秒");
+        str.append(")");
         return str.toString();
     }
 
@@ -71,7 +69,7 @@ public class Car {
                 passager.setX(x);
                 passager.setY(y);
                 if(random.nextInt(10) == 0) {
-                    System.out.println("乘客已下车！");
+                    System.out.println("【乘客已下车】！");
                     passager.startAgain();
                     passager = null;
                 }
@@ -82,7 +80,7 @@ public class Car {
             int xStep = Integer.compare(passager.getX(), x);
             int yStep = Integer.compare(passager.getY(), y);
             if(xStep == 0 && yStep == 0) {
-                System.out.println(carId + "已接到乘客！");
+                System.out.println(carId + "【已接到乘客】！");
                 headingForPassager = false;
             } else {
                 x += xStep;

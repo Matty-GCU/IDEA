@@ -17,4 +17,8 @@
         );
     </update>
 
+    <select id="getAllRegistered" resultType="Driver">
+        select * from drivers;
+    </select>
+
 </mapper>

@@ -26,10 +26,15 @@ create table cars (
     isOnline boolean default false
 );
 
-
+drop table managers;
+create table managers (
+    id varchar(20),
+    pwd varchar(50)
+)
 
 # select * from drivers d, cars c
 # where d.id = 83384123 and d.id = c.driverId;
 #
 # select * from drivers;
 # select * from cars;
+# select * from managers;

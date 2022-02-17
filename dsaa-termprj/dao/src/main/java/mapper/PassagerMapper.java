@@ -21,4 +21,6 @@ public interface PassagerMapper {
      * 获取所有在线乘客
      */
     List<Passager> getAllOnline();
+
+    List<Passager> getAllRegistered();
 }

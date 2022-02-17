@@ -17,4 +17,6 @@ public interface CarMapper {
      */
     List<Car> getAllOnline();
 
+    List<Car> getAllRegistered();
+
 }

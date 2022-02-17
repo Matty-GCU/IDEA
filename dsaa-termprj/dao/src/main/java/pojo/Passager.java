@@ -30,13 +30,11 @@ public class Passager {
         setY(random.nextInt(100) + 1);
         setCalling(true);
         setWaitingSeconds(12);
-        setSearchRange(30);
+        setSearchRange(20);
     }
 
     public void startAgain() {
-        setCalling(true);
-        setWaitingSeconds(12);
-        setSearchRange(30);
+        start();
     }
 
 }

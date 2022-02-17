@@ -15,4 +15,9 @@
     <select id="getAllOnline" resultType="Passager">
         select * from passagers where isOnline = true;
     </select>
+
+    <select id="getAllRegistered" resultType="Passager">
+        select * from passagers;
+    </select>
+
 </mapper>
