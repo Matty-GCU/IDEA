@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+<!--  <context-param>-->
+<!--    &lt;!&ndash; name是有自动补全提示，不是随便写的 &ndash;&gt;-->
+<!--    <param-name>contextConfigLocation</param-name>-->
+<!--    <param-value>classpath:applicationContext.xml</param-value>-->
+<!--  </context-param>-->
+<!--  -->
+<!--  <listener>-->
+<!--    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+<!--  </listener>-->
 </web-app>

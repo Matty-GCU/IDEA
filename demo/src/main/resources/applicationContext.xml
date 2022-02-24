@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="test" class="textbook.dao.TestDaoImpl"/>
+    <bean id="test" class="com.example.demo.textbook.dao.TestDaoImpl"/>
 
 
     <!-- 将指定类TestDIDaoImpl配置给Spring，让Spring创建其实例 -->
-    <bean id="myTestDIDao" class="textbook.dao.TestDIDaoImpl"/>
+    <bean id="myTestDIDao" class="com.example.demo.textbook.dao.TestDIDaoImpl"/>
 
-    <bean id="myTestDIService" class="textbook.service.TestDIServiceImpl">
+    <bean id="myTestDIService" class="com.example.demo.textbook.service.TestDIServiceImpl">
         <!-- 使用构造方法注入 -->
 <!--        <constructor-arg index="0" ref="myTestDIDao"/>-->
         <!-- 使用setter方法注入 -->

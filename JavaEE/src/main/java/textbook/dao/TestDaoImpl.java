@@ -1,4 +1,4 @@
-package dao;
+package textbook.dao;
 
 public class TestDaoImpl implements TestDao{
 
