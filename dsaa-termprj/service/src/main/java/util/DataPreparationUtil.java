@@ -1,8 +1,10 @@
-package loginlogout;
+package util;
 
-import pojo.Manager;
+import loginlogout.DriverService;
+import loginlogout.ManagerService;
+import loginlogout.PassagerService;
 
-public class Preparation {
+public class DataPreparationUtil {
     public static void prepareAllInfo() {
         ManagerService managerService = new ManagerService();
         managerService.register("root", "123456");

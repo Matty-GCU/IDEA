@@ -1,7 +1,7 @@
 import loginlogout.DriverService;
 import loginlogout.ManagerService;
 import loginlogout.PassagerService;
-import loginlogout.Preparation;
+import util.DataPreparationUtil;
 import system.BackGroundSystem;
 
 import java.util.Scanner;
@@ -17,13 +17,12 @@ public class ConsoleController {
     }
 
     public void entry() {
-        //管理员可以拉黑车辆或乘客，即删记录。/////////////////////////////
         System.out.println("===============================");
         System.out.println("请输入数字，选择对应操作：\n0.录入预设的测试数据以供测试\n1.我是乘客，我要打车\n2.我是司机，我要接单\n3.我是管理员，我要管理系统的运行情况。");
         try {
             int i = sc.nextInt();
             if(i == 0) {
-                Preparation.prepareAllInfo();
+                DataPreparationUtil.prepareAllInfo();
                 entry();
             }
             else if(i == 1) {

@@ -34,7 +34,6 @@ class DriverMapperTest {
 
     @Test
     void login() {
-        //先注册车，再登录司机！
         Assertions.assertEquals(driverMapper.login(83384123, ApplicationUtil.encryptPwd("123456")), 1);
     }
 
