@@ -65,6 +65,20 @@ public class Car {
                     x -= step;
                 }
             }
+            if(y + step > limit) {
+                y -= step;
+            }
+            else if(y - step < 0) {
+                y += step;
+            }
+            else {
+                if(random.nextInt(2) == 1) {
+                    y += step;
+                }
+                else {
+                    y -= step;
+                }
+            }
             if(passager != null) {
                 passager.setX(x);
                 passager.setY(y);

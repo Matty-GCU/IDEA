@@ -9,7 +9,7 @@ import util.MyBatisUtil;
 
 import java.util.List;
 
-public class BackGroundSystem {
+public class BackgroundSystem {
 
     SqlSession sqlSession;
     CarMapper carMapper;
@@ -20,7 +20,7 @@ public class BackGroundSystem {
     /**
      * 初始化系统
      */
-    public BackGroundSystem() {
+    public BackgroundSystem() {
         System.out.println("正在初始化...");
         sqlSession = MyBatisUtil.getSqlSession();
         carMapper = sqlSession.getMapper(CarMapper.class);
@@ -96,9 +96,6 @@ public class BackGroundSystem {
             }
             updateAllOnline();
 
-
-
-
             for(Passager passager : passagers) {
                 System.out.print("乘客" + passager.getName() + (passager.isCalling() ? "正在约车..." : "【已经约到车了】。"));
                 System.out.println("他当前的位置是" + passager.getDirection());
@@ -121,14 +118,12 @@ public class BackGroundSystem {
                     }
                 }
                 int w = passager.getWaitingSeconds();
-                if(w != -1) {
-                    if(w == 1) {
-                        passager.setWaitingSeconds(12);
-                        passager.setSearchRange(passager.getSearchRange() * 2);
-                    }
-                    else {
-                        passager.setWaitingSeconds(w - 1);
-                    }
+                if(w == 1) {
+                    passager.setWaitingSeconds(12);
+                    passager.setSearchRange(passager.getSearchRange() * 2);
+                }
+                else {
+                    passager.setWaitingSeconds(w - 1);
                 }
             }
 

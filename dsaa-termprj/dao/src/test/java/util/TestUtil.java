@@ -4,7 +4,11 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class ApplicationUtil {
+/**
+ * 这个类是专门用来辅助mapper包的测试的。
+ * 它其实就是service模块的ApplicationUtil类
+ */
+public class TestUtil {
 
     static MessageDigest messageDigest;
 

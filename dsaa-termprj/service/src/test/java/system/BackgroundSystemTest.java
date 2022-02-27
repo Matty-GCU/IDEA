@@ -2,11 +2,11 @@ package system;
 
 import org.junit.jupiter.api.Test;
 
-class BackGroundSystemTest {
+class BackgroundSystemTest {
 
     @Test
     void test() {
-        BackGroundSystem system = new BackGroundSystem();
+        BackgroundSystem system = new BackgroundSystem();
         system.play();
     }
 

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pojo.Passager;
-import util.ApplicationUtil;
+import util.TestUtil;
 import util.MyBatisUtil;
 
 import java.util.List;
@@ -29,16 +29,16 @@ class PassagerMapperTest {
 
     @Test
     void register() {
-        String pwd = ApplicationUtil.encryptPwd("123456");
+        String pwd = TestUtil.encryptPwd("123456");
         Assertions.assertEquals(passagerMapper.register(13417143272L, "小吴", pwd), 1);
-        pwd = ApplicationUtil.encryptPwd("111111");
+        pwd = TestUtil.encryptPwd("111111");
         Assertions.assertEquals(passagerMapper.register(15876597212L, "小黄", pwd), 1);
     }
 
     @Test
     void login() {
-        Assertions.assertEquals(passagerMapper.login(13417143272L, ApplicationUtil.encryptPwd("123456")), 1);
-        Assertions.assertEquals(passagerMapper.login(15876597212L, ApplicationUtil.encryptPwd("111111")), 1);
+        Assertions.assertEquals(passagerMapper.login(13417143272L, TestUtil.encryptPwd("123456")), 1);
+        Assertions.assertEquals(passagerMapper.login(15876597212L, TestUtil.encryptPwd("111111")), 1);
     }
 
     @Test

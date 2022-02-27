@@ -2,17 +2,17 @@ import loginlogout.DriverService;
 import loginlogout.ManagerService;
 import loginlogout.PassagerService;
 import util.DataPreparationUtil;
-import system.BackGroundSystem;
+import system.BackgroundSystem;
 
 import java.util.Scanner;
 
 public class ConsoleController {
 
-    BackGroundSystem backGroundSystem;
+    BackgroundSystem backGroundSystem;
     Scanner sc;
 
     public ConsoleController() {
-        backGroundSystem = new BackGroundSystem();
+        backGroundSystem = new BackgroundSystem();
         sc = new Scanner(System.in);
     }
 
