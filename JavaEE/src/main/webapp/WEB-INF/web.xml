@@ -8,7 +8,7 @@
 <!--  <context-param>-->
 <!--    &lt;!&ndash; name是有自动补全提示，不是随便写的 &ndash;&gt;-->
 <!--    <param-name>contextConfigLocation</param-name>-->
-<!--    <param-value>classpath:applicationContext.xml</param-value>-->
+<!--    <param-value>classpath:applicationContextCh1.xml</param-value>-->
 <!--  </context-param>-->
 <!--  -->
 <!--  <listener>-->

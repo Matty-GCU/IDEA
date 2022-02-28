@@ -12,5 +12,8 @@
         <module name="dao" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="小宝的数据结构大作业" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

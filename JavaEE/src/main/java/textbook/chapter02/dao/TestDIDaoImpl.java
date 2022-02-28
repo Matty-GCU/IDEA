@@ -1,4 +1,4 @@
-package textbook.dao;
+package textbook.chapter02.dao;
 
 public class TestDIDaoImpl implements TestDIDao{
     @Override

@@ -1,6 +1,6 @@
-package textbook.service;
+package textbook.chapter02.service;
 
-import textbook.dao.TestDIDao;
+import textbook.chapter02.dao.TestDIDao;
 
 public class TestDIServiceImpl implements TestDIService{
 
