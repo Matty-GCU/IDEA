@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="constructionInstance" class="textbook.chapter03.instance.Bean"/>
+    <bean id="sword" class="teamwork02.v3.Sword"/>
+
+    <bean id="shield" class="teamwork02.v3.Shield"/>
 
 </beans>
