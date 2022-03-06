@@ -1,15 +1,12 @@
-package textbook;
+package textbook.chapter01.dao;
 
-import textbook.chapter01.dao.TestDao;
-import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-public class TestCh01 {
+public class Test01 {
 
-    @Test
-    public void test() {
+    public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextCh1.xml");
         TestDao testDao = (TestDao) applicationContext.getBean("test");
         testDao.sayHello();

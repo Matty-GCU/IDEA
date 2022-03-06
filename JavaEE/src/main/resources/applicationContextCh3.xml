@@ -4,6 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="constructionInstance" class="textbook.chapter03.instance.Bean"/>
+    <!-- 构造方法实例化 -->
+    <bean id="constructionInstance" class="textbook.chapter03.instantiation.BeanClass"/>
 
+    <!-- 静态工厂实例化 -->
+    <bean id="staticFactoryInstance" class="textbook.chapter03.instantiation.BeanStaticFactory" factory-method="getInstance"/>
+
+    <!-- 实例工厂实例化 -->
+    <bean id="myInstanceFactory" class="textbook.chapter03.instantiation.BeanInstanceFactory"/>
+    <bean id="instanceFactoryInstance" factory-bean="myInstanceFactory" factory-method="createInstance"/>
 </beans>
