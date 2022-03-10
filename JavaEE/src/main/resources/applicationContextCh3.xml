@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- 指定作用域singleton -->
+    <bean id="singletonScopeInstance" scope="singleton" class="textbook.chapter03.instantiation.BeanClass"/>
+
+    <!-- 指定作用域prototype -->
+    <bean id="prototypeScopeInstance" scope="prototype" class="textbook.chapter03.instantiation.BeanClass"/>
+
+    <!-- 默认作用域singleton -->
     <!-- 构造方法实例化 -->
     <bean id="constructionInstance" class="textbook.chapter03.instantiation.BeanClass"/>
 
@@ -13,4 +21,72 @@
     <!-- 实例工厂实例化 -->
     <bean id="myInstanceFactory" class="textbook.chapter03.instantiation.BeanInstanceFactory"/>
     <bean id="instanceFactoryInstance" factory-bean="myInstanceFactory" factory-method="createInstance"/>
+
+    <!-- 注意得是singleton作用域的bean，Spring才能管理它的整个生命周期 -->
+    <bean id="beanLifeTest" class="textbook.chapter03.lifecycle.BeanLife" init-method="initMyself" destroy-method="destroyMyself"/>
+
+    <bean id="complexBeanTest1" class="textbook.chapter03.assemble.xml.ComplexUser">
+        <constructor-arg index="0" value="Wu"/>
+        <constructor-arg index="1">
+            <list>
+                <value>唱歌</value>
+                <value>跳舞</value>
+                <value>爬山</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="2">
+            <map>
+                <entry key="key1" value="keyValue1"/>
+                <entry key="key2" value="keyValue2"/>
+                <entry key="key3" value="keyValue3"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg index="3">
+            <set>
+                <value>Set元素111</value>
+                <value>Set元素222</value>
+                <value>Set元素333</value>
+            </set>
+        </constructor-arg>
+        <constructor-arg index="4">
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+            </array>
+        </constructor-arg>
+    </bean>
+
+    <bean id="complexBeanTest2" class="textbook.chapter03.assemble.xml.ComplexUser">
+        <property name="name" value="Wu"/>
+        <property name="hobbyList">
+            <list>
+                <value>唱歌</value>
+                <value>跳舞</value>
+                <value>爬山</value>
+            </list>
+        </property>
+        <property name="residenceMap">
+            <map>
+                <entry key="key1" value="keyValue1"/>
+                <entry key="key2" value="keyValue2"/>
+                <entry key="key3" value="keyValue3"/>
+            </map>
+        </property>
+        <property name="aliasSet">
+            <set>
+                <value>Set元素111</value>
+                <value>Set元素222</value>
+                <value>Set元素333</value>
+            </set>
+        </property>
+        <property name="array">
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+            </array>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="textbook.chapter03.assemble.annotaion"/>
+
 </beans>
