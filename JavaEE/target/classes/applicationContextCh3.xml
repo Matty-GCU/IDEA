@@ -89,4 +89,6 @@
 
     <context:component-scan base-package="textbook.chapter03.assemble.annotaion"/>
 
+    <context:component-scan base-package="textbook.chapter03.assemble.annotaion2"/>
+
 </beans>

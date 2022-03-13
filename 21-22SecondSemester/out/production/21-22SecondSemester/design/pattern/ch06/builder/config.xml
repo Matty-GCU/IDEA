@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<!--    <actorBuilder>design.pattern.ch06.builder.AngelBuilder</actorBuilder>-->
+    <actorBuilder>design.pattern.ch06.builder.DevilBuilder</actorBuilder>
+</config>
