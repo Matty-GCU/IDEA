@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <adapter>design.pattern.ch09.adapter.PoliceCarAdapter</adapter>
+
+    <imageFormat>design.pattern.ch10.bridge.example2.JPGImage</imageFormat>
+    <os>design.pattern.ch10.bridge.example2.WindowsOS</os>
+</config>

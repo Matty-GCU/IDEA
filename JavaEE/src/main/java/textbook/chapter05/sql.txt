@@ -1,0 +1,7 @@
+# create database javaee_test;
+use javaee_test;
+create table users (
+    uid int primary key,
+    uname varchar(20),
+    usex varchar(10)
+);
