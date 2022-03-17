@@ -1,0 +1,1 @@
+分两种，底层API（事务管理器）和TransactionTemplate（事务模板）

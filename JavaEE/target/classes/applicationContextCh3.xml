@@ -22,7 +22,7 @@
     <bean id="myInstanceFactory" class="textbook.chapter03.instantiation.BeanInstanceFactory"/>
     <bean id="instanceFactoryInstance" factory-bean="myInstanceFactory" factory-method="createInstance"/>
 
-    <!-- 注意得是singleton作用域的bean，Spring才能管理它的整个生命周期 -->
+    <!-- 注意必须是singleton作用域的bean，Spring才能管理它的整个生命周期 -->
     <bean id="beanLifeTest" class="textbook.chapter03.lifecycle.BeanLife" init-method="initMyself" destroy-method="destroyMyself"/>
 
     <bean id="complexBeanTest1" class="textbook.chapter03.assemble.xml.ComplexUser">

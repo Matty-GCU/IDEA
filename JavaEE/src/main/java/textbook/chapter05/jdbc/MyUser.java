@@ -1,4 +1,4 @@
-package textbook.chapter05;
+package textbook.chapter05.jdbc;
 
 public class MyUser {
     private Integer uid;

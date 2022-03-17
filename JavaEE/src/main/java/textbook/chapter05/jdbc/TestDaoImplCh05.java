@@ -1,4 +1,4 @@
-package textbook.chapter05;
+package textbook.chapter05.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class DaoImplCh05 implements DaoCh05 {
+public class TestDaoImplCh05 implements TestDaoCh05 {
     
     @Autowired  //自动装配该类型的Bean
     private JdbcTemplate jdbcTemplate;
