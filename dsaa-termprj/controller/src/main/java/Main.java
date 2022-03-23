@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        ConsoleController consoleController = new ConsoleController();
-        consoleController.entry();
+        ConsoleControllerOld consoleControllerOld = new ConsoleControllerOld();
+        consoleControllerOld.entry();
     }
 }

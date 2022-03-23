@@ -10,8 +10,10 @@
         <module name="controller" />
         <module name="dao" />
         <module name="service" />
-        <module name="小宝的数据结构大作业" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="临时，待改名" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
