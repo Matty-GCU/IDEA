@@ -5,8 +5,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestCh0503 {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContextCh5.xml");
-        TestServiceCh05 testServiceCh05 = (TestServiceCh05Impl) context.getBean("testServiceCh05Impl");
-        testServiceCh05.test();
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContextCh5.3.xml");
+        TestControllerCh0503 controller = (TestControllerCh0503) context.getBean("testControllerCh0503");
+        controller.test();
     }
 }

@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 配置数据源 -->
     <bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -30,6 +33,16 @@
         <property name="transactionManager" ref="myTransactionManager"/>
     </bean>
 
-    
 
+<!--    xmlns:tx="http://www.springframework.org/schema/tx"-->
+    <tx:advice id="myAdvice" transaction-manager="myTransactionManager">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+<!--    xmlns:aop="http://www.springframework.org/schema/aop"-->
+    <aop:config>
+        <aop:pointcut id="txPointCut" expression="execution(* textbook.chapter05.declaration.*.*())"/>
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
 </beans>
