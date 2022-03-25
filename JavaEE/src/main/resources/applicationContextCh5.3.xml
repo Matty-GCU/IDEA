@@ -22,7 +22,7 @@
     <!--    -->
     <!--</beans>-->
 
-<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--    xmlns:context="http://www.springframework.org/schema/context"-->
 <!--    xsi:schemaLocation="-->
 <!--    http://www.springframework.org/schema/context-->
 <!--    https://www.springframework.org/schema/context/spring-context.xsd"-->
@@ -51,7 +51,8 @@
 <!--    "-->
     <tx:advice id="advice5.3" transaction-manager="transactionManager5.3">
         <tx:attributes>
-            <tx:method name="*" rollback-for="java.lang.Exception"/>
+            <!-- 这里不是用来配置哪些方法要拦截，哪些方法不要的，而是针对被拦截的方法，自定义一些具体的操作 -->
+            <tx:method name="*"/>
 <!--            <tx:method name="tes*" read-only="true"/>-->
 <!--            <tx:method name="*est" read-only="true"/>-->
 <!--            <tx:method name="an unexisted method" read-only="true"/>-->
@@ -68,4 +69,6 @@
         <aop:advisor advice-ref="advice5.3" pointcut-ref="pointcut5.3"/>
     </aop:config>
 
+    <!-- 把上面的tx:advice和aop:config注释掉就可以用这个，效果完全一样 -->
+<!--    <tx:annotation-driven transaction-manager="transactionManager5.3"/>-->
 </beans>

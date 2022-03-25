@@ -20,12 +20,12 @@
   </properties>
 
   <dependencies>
-<!--    <dependency>-->
-<!--      <groupId>org.junit.jupiter</groupId>-->
-<!--      <artifactId>junit-jupiter-engine</artifactId>-->
-<!--      <version>5.8.2</version>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.8.2</version>
+      <scope>test</scope>
+    </dependency>
     <!-- springframework的一个比较顶层的模块 -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
@@ -46,7 +46,8 @@
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>1.9.8</version>
-      <scope>runtime</scope>
+<!-- 不要保留这个scope，不然没法在main目录里用这个包 -->
+<!--      <scope>runtime</scope>-->
     </dependency>
     <!-- spring和mybatis整合要用到 -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->

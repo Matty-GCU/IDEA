@@ -23,7 +23,6 @@ public class TransactionAPIDao {
     public String test() {
         //默认事务定义
         TransactionDefinition definition = new DefaultTransactionDefinition();
-        //
         TransactionStatus status = dataSourceTransactionManager.getTransaction(definition);
         try {
             String sql = "insert into users values(?, ?, ?)";

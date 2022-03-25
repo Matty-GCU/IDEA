@@ -68,4 +68,6 @@
         <aop:advisor advice-ref="advice5.3" pointcut-ref="pointcut5.3"/>
     </aop:config>
 
+    <!-- 把上面的tx:advice和aop:config注释掉就可以用这个，效果完全一样 -->
+<!--    <tx:annotation-driven transaction-manager="transactionManager5.3"/>-->
 </beans>
