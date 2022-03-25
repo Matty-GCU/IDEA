@@ -12,8 +12,9 @@ public class TestServiceCh05Impl implements TestServiceCh05 {
     
     @Override
     public void test() {
-        String sql = "insert into user value (?, ?, ?)";
+        String sql = "insert into users value (?, ?, ?)";
         Object[] params = {2, "俊鑫", "雄"};
         testDaoCh05.update(sql, params);
+//        testDaoCh05.update(sql, params);
     }
 }
