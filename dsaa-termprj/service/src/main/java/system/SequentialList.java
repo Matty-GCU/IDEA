@@ -6,8 +6,8 @@ package system;
  */
 public class SequentialList<T> {
     
-    protected int size;
-    protected Object[] elementData;
+    private int size;
+    private Object[] elementData;
     private static final int DEFAULT_CAPACITY = 16;
     
     /**
@@ -26,29 +26,6 @@ public class SequentialList<T> {
      */
     public SequentialList() {
         this(DEFAULT_CAPACITY);
-    }
-    
-    /**
-     * O(N)
-     */
-    public SequentialList(SequentialList<? extends T> list) {
-        this.size = list.size();
-        this.elementData = new Object[list.elementData.length];
-        for(int i = 0; i < size; i++) {
-            this.elementData[0] = list.elementData[i];
-        }
-    }
-    
-    /**
-     * O(N)
-     */
-    public SequentialList(T[] values) {
-        this(values.length * 2);
-        for(T value: values) {
-            if(value != null) {
-                elementData[size++] = value;
-            }
-        }
     }
     
     /**
@@ -105,16 +82,6 @@ public class SequentialList<T> {
         }
         str.append(")");
         return str.toString();
-    }
-    
-    public void destroy() {
-        elementData = null;
-    }
-    
-    @Override
-    public void finalize() {
-        this.destroy();
-        System.out.println("释放实例");
     }
     
     /**

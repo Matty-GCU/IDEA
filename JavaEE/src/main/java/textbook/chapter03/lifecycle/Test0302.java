@@ -7,7 +7,7 @@ public class Test0302 {
         System.out.println("创建一个Spring容器，开始加载配置文件：");
         // Create a new ClassPathXmlApplicationContext,
         // loading the definitions from the given XML file and automatically refreshing the context.
-        ClassPathXmlApplicationContext config = new ClassPathXmlApplicationContext("applicationContextCh3.xml");
+        ClassPathXmlApplicationContext config = new ClassPathXmlApplicationContext("spring/applicationContextCh3.xml");
         System.out.println("配置文件加载完成。");
 
         System.out.println("获得一个Bean对象：");

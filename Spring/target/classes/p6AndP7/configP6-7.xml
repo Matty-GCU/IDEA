@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean标签的name属性中可以配置多个别名，别名之间可以用空格/逗号/分号分隔 -->
+    <bean id="myUser" class="p6AndP7.User" name="alias3,alias4;alias5 alias6">
+        <property name="name" value="小吴"/>
+    </bean>
+
+<!--    &lt;!&ndash; 一个alias标签只能配置一个别名 &ndash;&gt;-->
+<!--    <alias name="myUser" alias="userAlias1"/>-->
+<!--    <alias name="myUser" alias="userAlias2"/>-->
+    <import resource="another-config.xml"/>
+
+</beans>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="teacherWu" class="p8ToP10.Teacher">
+        <property name="teacherName" value="吴老师"/>
+        <property name="teacherId" value="136"/>
+    </bean>
+
+    <bean id="teacherLin" class="p8ToP10.Teacher">
+        <property name="teacherName" value="林老师"/>
+        <property name="teacherId" value="134"/>
+    </bean>
+
+    <bean id="aStudent" class="p8ToP10.Student">
+        <!-- 值类型注入 -->
+<!--        <property name="name" value="小吴同学"/>-->
+        <property name="name">
+            <value>小吴同学</value>
+        </property>
+
+        <!-- 值类型的数组注入 -->
+        <property name="namesOfFriends">
+            <array>
+                <value>朋友名字1</value>
+                <value>朋友名字2</value>
+                <value>朋友名字3</value>
+            </array>
+        </property>
+
+        <!-- 引用类型注入 -->
+<!--        <property name="favoriteTeacher" ref="teacherWu"/>-->
+        <property name="favoriteTeacher">
+            <ref bean="teacherWu"/>
+        </property>
+
+        <!-- 引用类型的数组注入 -->
+        <property name="allTeachers">
+            <array>
+                <ref bean="teacherWu"/>
+                <ref bean="teacherLin"/>
+            </array>
+        </property>
+
+        <!-- List注入（仅演示值类型） -->
+        <property name="notebooks">
+            <list>
+                <value>笔记本111</value>
+                <value>笔记本111</value>
+                <value>笔记本222</value>
+            </list>
+        </property>
+
+        <!-- Set注入（仅演示值类型） -->
+        <property name="textbooks">
+            <set>
+                <value>语文课本</value>
+                <value>数学课本</value>
+                <value>英语课本</value>
+            </set>
+        </property>
+
+        <!-- Map注入（仅演示值类型） -->
+        <property name="grades">
+            <map>
+                <entry key="语文" value="85"/>
+                <entry key="数学" value="80"/>
+                <entry key="英语" value="90"/>
+            </map>
+        </property>
+
+        <!-- 空字符串注入 -->
+        <property name="anEmptyString" value=""/>
+
+        <!-- null值注入 -->
+        <property name="aNullValue">
+            <null/>
+        </property>
+    </bean>
+</beans>

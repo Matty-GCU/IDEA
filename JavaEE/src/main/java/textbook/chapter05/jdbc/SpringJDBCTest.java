@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SpringJDBCTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContextCh5.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring/applicationContextCh5.xml");
         TestDaoCh05 dao = (TestDaoCh05) context.getBean("testDaoImplCh05");
         String sql1 = "insert into users values (null, ?, ?)";
         Object[] params1 = {"小明", "男"};

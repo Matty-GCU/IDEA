@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test0301 {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextCh3.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/applicationContextCh3.xml");
 
         //Bean的三种实例化方式
         System.out.println("默认singleton作用域：");

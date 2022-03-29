@@ -5,9 +5,8 @@ import org.junit.jupiter.api.Test;
 class BackgroundSystemOldTest {
 
     @Test
-    void test() {
-        BackgroundSystemOld system = new BackgroundSystemOld();
+    void testNew() {
+        BackgroundSystem system = new BackgroundSystem();
         system.play();
     }
-
 }

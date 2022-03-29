@@ -11,7 +11,7 @@ import textbook.chapter03.assemble.xml.ComplexUser;
 public class Test0303 {
     public static void main(String[] args) {
         //基于XML配置文件的装配方式
-        ClassPathXmlApplicationContext xmlConfig = new ClassPathXmlApplicationContext("applicationContextCh3.xml");
+        ClassPathXmlApplicationContext xmlConfig = new ClassPathXmlApplicationContext("spring/applicationContextCh3.xml");
         System.out.println("\n方法一：使用构造方法注入依赖");
         ComplexUser complexUser1 = (ComplexUser) xmlConfig.getBean("complexBeanTest1");
         System.out.println(complexUser1);

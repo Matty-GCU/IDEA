@@ -7,7 +7,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class Test01 {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextCh1.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/applicationContextCh1.xml");
         TestDao testDao = (TestDao) applicationContext.getBean("test");
         testDao.sayHello();
 
