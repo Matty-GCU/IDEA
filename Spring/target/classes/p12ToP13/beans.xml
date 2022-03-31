@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myCat" class="p12ToP13.Cat" p:catName="小猫咪"/>
+
+    <bean id="myDog" class="p12ToP13.Dog" p:dogName="小狗狗"/>
+
+<!--    <bean id="I" class="p12ToP13.Person" p:cat-ref="myCat" p:dog-ref="myDog"/>-->
+
+<!--     byName自动注入，默认的Bean依赖的id名是类名小写。此时Spring容器找不到id名为"dog"的Bean，所以注入失败-->
+<!--    <bean id="I" class="p12ToP13.Person" autowire="byName"/>-->
+
+<!--     byName自动注入，找与依赖类型相同的Bean -->
+    <bean id="I" class="p12ToP13.Person" autowire="byType"/>
+
+</beans>

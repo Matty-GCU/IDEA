@@ -10,7 +10,7 @@ import java.lang.reflect.Proxy;
  * InvocationHandler is the interface implemented by the invocation handler of a proxy instance.
  * Each proxy instance has an associated invocation handler.
  * When a method is invoked on a proxy instance, the method invocation is encoded and dispatched to the invoke method of its invocation handler.
- * 就是说，创建了代理对象后，它要是想调用方法，可以让这个handler来做。
+ * 就是说，创建了代理对象后，它要是想调用方法，就是让这个handler来做。
  */
 public class JDKInvocationHandler implements InvocationHandler {
 

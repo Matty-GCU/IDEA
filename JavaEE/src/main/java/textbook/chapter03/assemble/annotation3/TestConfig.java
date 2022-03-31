@@ -3,8 +3,10 @@ package textbook.chapter03.assemble.annotation3;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
+@Scope("singleton")
 public class TestConfig {
 
     @Bean

@@ -17,17 +17,17 @@ class UserMapperTest {
     SqlSession sqlSession;
     UserMapper userMapper;
 
-//    @BeforeEach
-//    void initTest() {
-//        sqlSession = MyBatisUtils.getSqlSession();
-//        userMapper = sqlSession.getMapper(UserMapper.class);
-//    }
+    @BeforeEach
+    void initTest() {
+        sqlSession = MyBatisUtils.getSqlSession();
+        userMapper = sqlSession.getMapper(UserMapper.class);
+    }
 
-//    @AfterEach
-//    void closeTest() {
-//        sqlSession.commit();
-//        sqlSession.close();
-//    }
+    @AfterEach
+    void closeTest() {
+        sqlSession.commit();
+        sqlSession.close();
+    }
 
     @Test
     @DisplayName("缓存测试")

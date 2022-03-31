@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 配置数据源 -->
+    <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/javaee_test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+        <!-- 最大连接数 -->
+        <property name="maxTotal" value="30"/>
+        <!-- 最大空闲连接数 -->
+        <property name="maxIdle" value="10"/>
+        <!-- 初始化连接数 -->
+        <property name="initialSize" value="5"/>
+    </bean>
+
+    <!-- 配置SqlSessionFactory并指定数据源，与MyBatis完美融合 -->
+    <bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"  >
+        <property name="dataSource" ref="myDataSource"/>
+        <property name="configLocation" value="classpath:mybatis/ch06/mybatis-config.xml"/>
+    </bean>
+
+    <!-- 使用Spring自动扫描MyBatis的接口并装配（Spring会将指定包中所有接口自动装配为MyBatis的Mapper接口的实现类） -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- mybatis-spring组件的扫描器，该包下只需要存在接口（mapper.xml映射文件的位置是在mybatis-config.xml配的） -->
+        <property name="basePackage" value="textbook.chapter06.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="mySqlSessionFactory"/>
+    </bean>
+
+    <!-- 添加事务支持 -->
+    <bean id="transactionManagerCh06" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="myDataSource"/>
+    </bean>
+
+    <!-- 开启事务注解（当然你不使用注解的话这个配置就相当于用不着了） -->
+    <tx:annotation-driven transaction-manager="transactionManagerCh06"/>
+
+    <context:component-scan base-package="textbook.chapter06"/>
+</beans>

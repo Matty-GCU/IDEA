@@ -3,6 +3,7 @@ package textbook.chapter04.dynamic.proxy.jdk;
 public class JDKDynamicProxyTest {
     public static void main(String[] args) {
         JDKInvocationHandler proxy = new JDKInvocationHandler();
+        
         Dao dao = new DaoImpl();
         dao.save();
         dao.modify();
