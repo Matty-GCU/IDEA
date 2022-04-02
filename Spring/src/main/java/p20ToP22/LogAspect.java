@@ -1,10 +1,13 @@
-package p20;
+package p20ToP22;
 
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 
 import java.lang.reflect.Method;
 
+/**
+ * 注意！看实现了哪些接口！
+ */
 public class LogAspect implements MethodBeforeAdvice, AfterReturningAdvice {
     /**
      * Callback before a given method is invoked.

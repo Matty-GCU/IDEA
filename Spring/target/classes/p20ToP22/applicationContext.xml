@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 注册Bean -->
+    <bean id="myService" class="p20ToP22.ServiceP20Impl"/>
+<!--    <bean id="myLogAspect" class="p20ToP22.LogAspect"/>-->
+
+    <!-- 方法一：使用Spring原生API -->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="myPointcut" expression="execution(* p20ToP22.ServiceP20Impl.*(..))"/>-->
+<!--        <aop:advisor advice-ref="myLogAspect" pointcut-ref="myPointcut"/>-->
+<!--    </aop:config>-->
+
+    <!-- 方法二：使用自定义切面类，不过功能没有上一种强大 -->
+<!--    <bean id="myAspect" class="p20ToP22.MyAspect"/>-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 注意看使用了什么标签 &ndash;&gt;-->
+<!--        <aop:aspect ref="myAspect">-->
+<!--            <aop:pointcut id="myPointcut" expression="execution(* p20ToP22.ServiceP20Impl.*(..))"/>-->
+<!--            <aop:before method="before" pointcut-ref="myPointcut"/>-->
+<!--            <aop:after method="after" pointcut-ref="myPointcut"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+    <!-- 方法三：相当于方法二的注解版 -->
+    <bean id="myAnnotationAspect" class="p20ToP22.AnnotationAspect"/>
+    <aop:aspectj-autoproxy/>
+</beans>

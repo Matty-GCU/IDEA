@@ -1,4 +1,4 @@
-package p20;
+package p20ToP22;
 
 public interface ServiceP20 {
     void insert();

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入通用的适用于MyBatis整合的配置 -->
+    <import resource="spring-mybatis-util.xml"/>
+
+    <!-- 将SqlSessionFactory注入到UserMapperImpl中 -->
+    <bean id="userMapperImpl" class="p23MyBatis.mapper.UserMapperImpl">
+        <!-- 注意：Setter方式注入，需要有Setter方法 -->
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+    </bean>
+</beans>

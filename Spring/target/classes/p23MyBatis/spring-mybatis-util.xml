@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置数据源，代替原来在MyBatis中配置数据源-->
+    <bean id="mybatisDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!-- 配置SQLSessionFactory模板，代替原来在MyBatis中通过SQLSessionFactoryBuilder方式获取SQLSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="mybatisDataSource"/>
+        <!-- 可以绑定MyBatis配置文件，也可以不绑定。 -->
+        <property name="configLocation" value="classpath:p23MyBatis/mybatis-config.xml"/>
+        <!-- 可以在这注册Mapper，也可以在MyBatis配置文件中注册。但是不能重复注册！ -->
+        <!-- 注意这里注册的Mapper“映射器”其实不是Mapper.xml而是Mapper.class -->
+        <property name="mapperLocations" value="classpath:p23MyBatis/mapper/UserMapper.xml"/>
+    </bean>
+
+    <!-- 配置SqlSessionTemplate，代替原来在MyBatis中通过SqlSessionFactory获取SqlSession -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <!-- 之所以使用构造器方式注入，是因为SqlSessionTemplate中没有Setter方法（可以直接点进去看源码，验证一下） -->
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+</beans>

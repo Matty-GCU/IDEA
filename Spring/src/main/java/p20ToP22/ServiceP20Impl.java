@@ -1,4 +1,4 @@
-package p20;
+package p20ToP22;
 
 public class ServiceP20Impl implements ServiceP20 {
     @Override
