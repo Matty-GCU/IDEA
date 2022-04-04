@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- 引入通用的适用于MyBatis整合的配置 -->
     <import resource="spring-mybatis-util.xml"/>
@@ -11,4 +12,50 @@
         <!-- 注意：Setter方式注入，需要有Setter方法 -->
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
+
+    <!-- 另一种实现方式 -->
+    <bean id="userMapperImpl2" class="p23MyBatis.mapper.UserMapperImpl2">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- 官方：要开启 Spring 的事务处理功能，就在 Spring 的配置文件中创建一个 DataSourceTransactionManager 对象。 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 官方：传入的 DataSource 可以是任何能够与 Spring 兼容的 JDBC DataSource。包括连接池和通过 JNDI 查找获得的 DataSource。 -->
+        <!-- 官方：注意：为事务管理器指定的 DataSource 必须和用来创建 SqlSessionFactoryBean 的是同一个数据源，否则事务管理器就无法工作了。 -->
+        <property  name="dataSource" ref="mybatisDataSource"/>
+    </bean>
+
+    <!-- 结合Spring AOP实现实现事务管理 -->
+    <!-- xmlns:aop="http://www.springframework.org/schema/aop" -->
+    <!-- http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd -->
+    <aop:config>
+        <!-- 配置切入点 -->
+        <aop:pointcut id="myPointcut" expression="execution(* p23MyBatis.mapper.UserMapperImpl.addUser(int, String, String))"/>
+        <!-- 配置织入到切入点的通知 -->
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="myPointcut"/>
+    </aop:config>
+
+    <!-- 配置通知 -->
+    <!-- xmlns:tx="http://www.springframework.org/schema/tx" -->
+    <!-- http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" -->
+    <tx:advice id="myAdvice" transaction-manager="transactionManager">
+        <!-- 注意：这里不是用来配置哪些方法要被拦截的（这个在aop:pointcut中已经配置好了），而是针对确定要被拦截的方法，配置一些具体的操作。 -->
+        <tx:attributes>
+            <!-- 此处的propagation（传播）属性配置的是事务的传播特性，当然还可以配置其他属性，比如事务的隔离级别、是否只读和超时时间等等。 -->
+            <!-- 当然，由于addUser(..)方法里实际上并没有调用其他事务方法，在这种特定情况下，设置事务传播特性并无实际意义。 -->
+            <tx:method name="addUser" propagation="REQUIRED"/>
+            <!-- 其他有效写法 -->
+<!--            <tx:method name="*"/>-->
+<!--            <tx:method name="add*"/>-->
+<!--            <tx:method name="*Use"/>-->
+<!--            <tx:method name="*addUser"/>-->
+<!--            <tx:method name="addUser*"/>-->
+<!--            <tx:method name="*addUser*"/>-->
+            <!-- 无效写法 -->
+<!--            <tx:method name="add"/>-->
+<!--            <tx:method name="addU"/>-->
+<!--            <tx:method name="insert"/>-->
+        </tx:attributes>
+    </tx:advice>
+
 </beans>

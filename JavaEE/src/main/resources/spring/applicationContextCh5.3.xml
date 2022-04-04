@@ -51,7 +51,7 @@
 <!--    "-->
     <tx:advice id="advice5.3" transaction-manager="transactionManager5.3">
         <tx:attributes>
-            <!-- 这里不是用来配置哪些方法要拦截，哪些方法不要的，而是针对被拦截的方法，自定义一些具体的操作 -->
+            <!-- 注意：这里不是用来配置哪些方法要被拦截的（这个在aop:pointcut中已经配置好了），而是针对确定要被拦截的方法，配置一些具体的操作。 -->
             <tx:method name="*"/>
 <!--            <tx:method name="tes*" read-only="true"/>-->
 <!--            <tx:method name="*est" read-only="true"/>-->
