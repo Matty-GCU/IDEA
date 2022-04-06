@@ -54,19 +54,6 @@ public class SequentialList<T> {
     }
     
     /**
-     * O(1)
-     */
-    public void set(int i, T x) {
-        if(x == null) {
-            throw new NullPointerException("x==null");
-        }
-        if(i < 0 && i >= size) {
-            throw new IndexOutOfBoundsException("i="+ i);
-        }
-        elementData[i] = x;
-    }
-    
-    /**
      * 时间复杂度：O(N)
      */
     @Override
@@ -141,20 +128,6 @@ public class SequentialList<T> {
     /**
      * O(N)
      */
-    public T remove(T x) {
-        return remove(indexOf(x));
-    }
-    
-    /**
-     * O(1)
-     */
-    public void clear() {
-        size = 0;
-    }
-    
-    /**
-     * O(N)
-     */
     public int indexOf(T key) {
         for(int i = 0; i < size; i++) {
             if(elementData[i].equals(key)) {
@@ -162,29 +135,6 @@ public class SequentialList<T> {
             }
         }
         return -1;
-    }
-    
-    /**
-     * O(N)
-     */
-    @Override
-    @SuppressWarnings("unchecked")
-    public boolean equals(Object obj) {
-        if(this == obj) {
-            return true;
-        }
-        if(obj instanceof SequentialList<?>) {
-            SequentialList<T> list = (SequentialList<T>) obj;
-            if(this.size == list.size()) {
-                for(int i = 0; i < this.size; i++) {
-                    if(! this.elementData[i].equals(list.elementData[i])) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
     }
     
 }
