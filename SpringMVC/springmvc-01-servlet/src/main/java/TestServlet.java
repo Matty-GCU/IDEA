@@ -1,5 +1,5 @@
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @author Matty
  **/
-@WebServlet(name = "TestServlet", value = "/TestServlet")
+//@WebServlet(name = "myServlet", value = "/TestServlet")
 public class TestServlet extends HttpServlet {
     
     @Override

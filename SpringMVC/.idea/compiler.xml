@@ -7,7 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springmvc-01-servlet" />
+        <module name="springmvc-02-hellomvc" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springmvc-02-hellomvc" options="-extdirs &quot;C:\Users\Matty's PC\IdeaProjects\SpringMVC\springmvc-02-hellomvc/src/main/webapp/WEB-INF/lib&quot;" />
+    </option>
   </component>
 </project>
