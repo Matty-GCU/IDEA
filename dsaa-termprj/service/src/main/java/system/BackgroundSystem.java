@@ -67,7 +67,6 @@ public class BackgroundSystem {
                     newCar.start(100);
                     System.out.println("【新增】车辆" + newCar.getCarId() + "进入系统，正在自动匹配接单...车辆当前位置：" + newCar.getDirection());
                 }
-                
             }
         }
         

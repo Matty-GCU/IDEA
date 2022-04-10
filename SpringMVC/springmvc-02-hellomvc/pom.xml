@@ -17,6 +17,7 @@
     </properties>
 
     <dependencies>
+        <!-- 以下依赖均为当前最新版本（截止至2022.04.05） -->
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>

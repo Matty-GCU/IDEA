@@ -4,19 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--处理器映射器-->
+    <!-- 处理器映射器HandlerMapping，负责按照特定规则去查找Handler。 -->
+    <!-- 只是为了理解原理才这么写，并非必要配置，注释掉也能正常运行。 -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
-    <!--处理器适配器-->
+
+    <!-- 处理器适配器HandlerAdapter，负责按照特定规则去执行Handler。 -->
+    <!-- 只是为了理解原理才这么写，并非必要配置，注释掉也能正常运行。 -->
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-    <!--视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="InternalResourceViewResolver">
-        <!--前缀-->
+
+    <!-- 视图解析器ViewResolver，负责解析视图名 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 前缀 -->
         <property name="prefix" value="/WEB-INF/jsp/"/>
-        <!--后缀-->
+        <!-- 后缀 -->
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
-    <!--Handler-->
+    <!-- 处理器Handler。该处理器是一个Controller，本质上是一个Servlet。 -->
     <bean id="/hello" class="HelloController"/>
+
 </beans>

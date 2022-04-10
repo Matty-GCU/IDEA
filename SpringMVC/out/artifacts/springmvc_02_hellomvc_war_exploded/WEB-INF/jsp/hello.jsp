@@ -12,6 +12,6 @@
     <meta charset="UTF-8">
 </head>
 <body>
-${msg}
+${result}
 </body>
 </html>
