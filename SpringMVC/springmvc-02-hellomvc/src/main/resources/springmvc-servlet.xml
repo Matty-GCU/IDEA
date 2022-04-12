@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--（从 Spring4.0开始，如果不配置处理器映射器、处理器适配器和视图解析器，Spring会使用默认配置来完成相应工作。）-->
 
     <!-- 处理器映射器HandlerMapping，负责按照特定规则去查找Handler。 -->
     <!-- 只是为了理解原理才这么写，并非必要配置，注释掉也能正常运行。 -->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<!--    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
 
     <!-- 处理器适配器HandlerAdapter，负责按照特定规则去执行Handler。 -->
     <!-- 只是为了理解原理才这么写，并非必要配置，注释掉也能正常运行。 -->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+<!--    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
+
+    <!-- 处理器Handler。该处理器是一个Controller，本质上是一个Servlet。 -->
+    <bean id="/hello" class="HelloController"/>
 
     <!-- 视图解析器ViewResolver，负责解析视图名 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -20,7 +31,20 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- 处理器Handler。该处理器是一个Controller，本质上是一个Servlet。 -->
-    <bean id="/hello" class="HelloController"/>
+
+    <!-- 自动扫描指定包中的java文件，若扫描到被@Component、@Controller等注解标记的类，就将其注册为Bean，由Spring容器统一管理。 -->
+    <!--（因为是指定“某个”包，不是指定“某些”包，所以base-package的值没有"*"这种写法，更不能为""。）-->
+    <context:component-scan base-package="com.example.controller"/>
+
+    <!-- 使用Web容器默认的Servlet来处理对静态资源的请求，用于解决【静态资源访问】的问题 -->
+    <!-- 但是说实话我没有成功解决过这个问题，所以这里也算是一个TODO吧 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 支持SpringMVC注解驱动 -->
+    <!-- 狂神：在spring中一般采用@RequestMapping注解来完成映射关系，
+    要想使@RequestMapping注解生效，必须向上下文中注册DefaultAnnotationHandlerMapping和一个AnnotationMethodHandlerAdapter实例，
+    这两个实例分别在类级别和方法级别处理，而annotation-driven配置帮助我们自动完成上述两个实例的注入。 -->
+    <!--（经实测，其实注释掉这行也不影响程序运行，可能是SpringMVC默认帮我们配置好了。）-->
+    <mvc:annotation-driven/>
 
 </beans>

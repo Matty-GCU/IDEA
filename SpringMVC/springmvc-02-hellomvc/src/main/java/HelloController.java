@@ -14,13 +14,13 @@ public class HelloController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        
+
         // 业务代码
         String result = "Hello SpringMVC!";
         modelAndView.addObject("result", result);
         // 设置视图名称
         modelAndView.setViewName("hello");
-        
+        // 转发
         return modelAndView;
     }
     

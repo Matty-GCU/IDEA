@@ -12,6 +12,8 @@
     <meta charset="UTF-8">
 </head>
 <body>
-${result}
+    ${result}
+
+    <script src="/WEB-INF/js/test.js"/>
 </body>
 </html>

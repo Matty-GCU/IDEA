@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
   </head>
   <body>
-  $END$
+    $END$
+    <div>${message}</div>
   </body>
 </html>

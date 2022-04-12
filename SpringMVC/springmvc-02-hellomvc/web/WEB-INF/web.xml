@@ -25,5 +25,4 @@
         所以这里的“/”无法匹配带有.jsp后缀的请求，当然，除此之外的请求都可以。 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
 </web-app>
