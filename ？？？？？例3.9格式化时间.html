@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue_src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>当前时间：{{date | formateTime}}</h1>
+        <h1>{{<span>date</span>}}：{{date}}</h1>
+    </div>
+    <script>
+        var addZero = function(datetime) {
+            return (datetime < 10) ? ('0' + datetime) : datetime;
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                date: new Date()
+            },
+            filters: {
+                formateTime: function (val) {
+                    let date = new Date(val);
+                    let year = date.getFullYear();
+                    let month = addZero(date.getMonth() + 1);
+                    let day = addZero(date.getDate());
+                    let hours = addZero(date.getHours());
+                    let min = addZero(date.getMinutes());
+                    let sec = addZero(date.getSeconds());
+                    return year + '-' + month + '-' + day + '-' + hours + '-' + min + '-' + sec;
+                }
+            },
+
+
+            created: function () {
+                var that = this;
+                this.timer = setInterval(function() {
+                    // this.date = new Date();
+                    that.date = new Date();
+                }, 1000);
+            },
+            beforeDestroy: function () {
+                if(this.timer) {
+                    clearInterval(this.timer);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
