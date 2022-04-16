@@ -13,7 +13,5 @@
 </head>
 <body>
     ${result}
-
-    <script src="/WEB-INF/js/test.js"/>
 </body>
 </html>

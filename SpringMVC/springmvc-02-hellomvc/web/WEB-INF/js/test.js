@@ -1,1 +1,0 @@
-document.getElementsByTagName("body").item(0).style.backgroundColor = "skyblue";
