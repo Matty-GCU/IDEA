@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+    Activates replacement of ${...} placeholders by registering a
+	PropertySourcesPlaceholderConfigurer within the application context. Properties will
+	be resolved against the specified properties file or Properties object, so called
+	"local properties", if any, and against the Spring Environment's current set of
+	PropertySources.
+    -->
+    <context:property-placeholder location="classpath:db.properties"/>
+
+    <!-- 配置数据源，代替原来在MyBatis中配置数据源 -->
+    <!-- 这里使用c3p0数据库连接池 -->
+    <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driver}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <property name="user" value="${username}"/>
+        <property name="password" value="${password}"/>
+
+        <property name="maxPoolSize" value="30"/>
+        <property name="minPoolSize" value="10"/>
+    </bean>
+
+    <!-- 配置SqlSessionFactoryBean，代替原来在MyBatis中通过SQLSessionFactoryBuilder方式获取SQLSessionFactory -->
+    <bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="mapperLocations" value="classpath:mybatis-config.xml"/>
+        <property name="dataSource" ref="myDataSource"/>
+    </bean>
+
+    <!-- http://mybatis.org/spring/zh/mappers.html#注入映射器 -->
+    <!-- 配置MapperFactoryBean，代替原来在MyBatis-Spring中手动编写映射器接口的实现类 -->
+<!--    <bean id="myBookMapperFactory" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+<!--        <property name="mapperInterface" value="org.example.dao.BookMapper"/>-->
+<!--        <property name="sqlSessionFactory" ref="mySqlSessionFactory"/>-->
+<!--    </bean>-->
+
+    <!-- http://mybatis.org/spring/zh/mappers.html#发现映射器 -->
+    <!-- 官网：不需要一个个地注册你的所有映射器。你可以让 MyBatis-Spring 对类路径进行扫描来发现它们。 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.example.dao"/>
+        <!-- 注意这里是sqlSessionFactoryBean的"Name"，所以注入的应该是字符串，用value -->
+        <property name="sqlSessionFactoryBeanName" value="mySqlSessionFactory"/>
+    </bean>
+</beans>

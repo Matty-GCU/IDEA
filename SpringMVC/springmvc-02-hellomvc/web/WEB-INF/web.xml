@@ -20,7 +20,7 @@
 
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
-        <!-- url-pattern的匹配优先级是精确匹配（/login.html）、路径匹配（/*）、扩展名匹配（/*.html）、缺省匹配（/） -->
+        <!-- url-pattern的匹配优先级是精确匹配（/login.html）、路径匹配（/*）、扩展名匹配（*.html）、缺省匹配（/） -->
         <!-- 在这个例子中，虽然没有显示声明其他更高优先级的url匹配方式，但是由于servlet容器中有内置的“*.jsp”匹配器，而扩展名匹配的优先级高于缺省匹配，
         所以这里的“/”无法匹配带有.jsp后缀的请求，当然，除此之外的请求都可以。 -->
         <url-pattern>/</url-pattern>
