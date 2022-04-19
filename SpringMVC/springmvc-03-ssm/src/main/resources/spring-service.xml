@@ -8,8 +8,4 @@
 
     <context:component-scan base-package="org.example.service"/>
 
-<!--    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-<!--        <property name="dataSource" ref="myDataSource"/>-->
-<!--    </bean>-->
-
 </beans>

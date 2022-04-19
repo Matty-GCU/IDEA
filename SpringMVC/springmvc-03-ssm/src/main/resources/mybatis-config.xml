@@ -9,7 +9,6 @@
     </typeAliases>
 
     <mappers>
-        <mapper class="org.example.dao"/>
+        <package name="org.example.dao"/>
     </mappers>
-    
 </configuration>

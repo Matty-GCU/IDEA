@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.BookMapper">
+
+    <insert id="insertBook" parameterType="Book">
+        insert into springmvc_test.books(title, number, introduction) VALUES (#{title}, #{number}, #{introduction});
+    </insert>
+
+    <delete id="deleteBookById" parameterType="_int">
+        delete from springmvc_test.books where id = #{id};
+    </delete>
+
+    <update id="updateBookById" parameterType="Book">
+        update springmvc_test.books set title = #{title}, number = #{number}, introduction = #{introduction} where id = #{id};
+    </update>
+
+    <select id="selectBookById" parameterType="_int" resultType="Book">
+        select * from springmvc_test.books where id = #{id};
+    </select>
+
+    <select id="selectAllBooks" resultType="Book">
+        select * from springmvc_test.books;
+    </select>
+</mapper>
