@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BookMapper">
+
+    <select id="selectBookById" parameterType="_int" resultMap="bookMap1">
+        select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName
+        from javaee_test.book a, javaee_test.book_shelf b
+        <choose>
+            <when test="id != 0">
+                where a.id=#{id} and a.shelfId = b.id
+            </when>
+            <otherwise>
+                where a.id = -1 and a.shelfId = b.id
+            </otherwise>
+        </choose>
+    </select>
+    <resultMap id="bookMap1" type="pojo.Book">
+        <id property="id" column="bookId"/>
+        <result property="name" column="bookName"/>
+        <result property="price" column="price"/>
+        <result property="author" column="author"/>
+        <result property="number" column="number"/>
+        <association property="bookShelf" javaType="pojo.BookShelf">
+            <result property="id" column="shelfId"/>
+            <result property="name" column="shelfName"/>
+        </association>
+    </resultMap>
+
+    <select id="selectBookByName" parameterType="string" resultMap="bookMap2" >
+        select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName
+        from javaee_test.book a, javaee_test.book_shelf b
+        <where>
+            <if test="true">
+                a.shelfId = b.id
+            </if>
+            <if test="name != null">
+                and a.name like #{name}
+            </if>
+        </where>
+    </select>
+    <resultMap id="bookMap2" type="pojo.Book">
+        <id property="id" column="bookId"/>
+        <result property="name" column="bookName"/>
+        <result property="price" column="price"/>
+        <result property="author" column="author"/>
+        <result property="number" column="number"/>
+        <result property="bookShelf.id" column="shelfId"/>
+        <result property="bookShelf.name" column="shelfName"/>
+    </resultMap>
+
+    <select id="selectBook" resultMap="bookMap1">
+        select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName
+        from javaee_test.book a, javaee_test.book_shelf b
+        where a.shelfId = b.id and a.id in
+        <foreach collection="list" item="bookId" open="(" separator="," close=")">
+            #{bookId}
+        </foreach>
+
+    </select>
+
+    <select id="selectAllBooks" resultMap="bookMap1">
+        select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName
+        from javaee_test.book a, javaee_test.book_shelf b
+        where a.shelfId = b.id;
+    </select>
+
+    <insert id="insertBook" parameterType="pojo.Book" >
+        insert into javaee_test.book(name, price, author, number, shelfid)
+        values(#{name}, #{price}, #{author}, #{number}, #{bookShelf.id})
+    </insert>
+
+    <update id="updateBookById" parameterType="pojo.Book">
+        update javaee_test.book
+        set name=#{name}, price=#{price}, author=#{author}, number=#{number}
+        where id=#{id}
+    </update>
+</mapper>

@@ -16,10 +16,13 @@ public class Test {
         SqlSession ss=ssf.openSession(true);
         Book book=(Book)ss.selectOne("mapper.UserMapper.selectById",1);
         System.out.println(book.toString());
+        
         List books=ss.selectList("mapper.UserMapper.selectByName","Java%");
         System.out.println(books);
+        
         Book newbook=new Book("数据结构",35.0,"严蔚敏",6,1);
         System.out.println( ss.insert("mapper.UserMapper.insertData",newbook));
+        
         List allBook=ss.selectList("mapper.UserMapper.selectAll");
         System.out.println(allBook);
     }
