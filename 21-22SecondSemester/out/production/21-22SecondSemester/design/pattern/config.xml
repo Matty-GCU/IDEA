@@ -4,4 +4,8 @@
 
     <imageFormat>design.pattern.ch10.bridge.example2.JPGImage</imageFormat>
     <os>design.pattern.ch10.bridge.example2.WindowsOS</os>
+
+    <!-- 第17章命令模式 -->
+    <command>design.pattern.ch17.command.example2.ExitCommand</command>
+<!--    <command>design.pattern.ch17.command.example2.HelpCommand</command>-->
 </config>

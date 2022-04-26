@@ -8,6 +8,15 @@ public class BookShelf {
     String name;    //category
     List<Book> books;
     
+    public BookShelf() {
+    }
+    
+    public BookShelf(int id, String name, List<Book> books) {
+        this.id = id;
+        this.name = name;
+        this.books = books;
+    }
+    
     public int getId() {
         return id;
     }
@@ -34,10 +43,10 @@ public class BookShelf {
     
     @Override
     public String toString() {
-        return "BookShelf{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", books=" + books +
-                '}';
+        return "书架{" +
+                "书架编号=" + id +
+                ", 图书类别='" + name + '\'' +
+                ", 包含图书=\n" + books +
+                "\n}";
     }
 }

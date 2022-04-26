@@ -7,7 +7,7 @@ public class SelectUserById {
 	
 	@Override
 	public String toString() {
-		return "ÓÃ»§ĞÅÏ¢[Ñ§ºÅ£º"+uid+",ĞÕÃû£º"+uname+",½èÊé¿¨ºÅ£º"+code+"]";
+		return "ç”¨æˆ·ä¿¡æ¯[å­¦å·ï¼š"+uid+",å§“åï¼š"+uname+",å€Ÿä¹¦å¡å·ï¼š"+code+"]";
 	}
 	public Integer getuId() {
 		return uid;

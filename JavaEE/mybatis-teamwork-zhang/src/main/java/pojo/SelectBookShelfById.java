@@ -1,16 +1,16 @@
 package pojo;
 
 public class SelectBookShelfById {
-    private String name;
-    private Integer id;
-    private Double price;
-    private String author;
-    private Integer shelfid;
-    private String bname;
-    @Override
-    public String toString() {
-    	return "Êé¼Ü[Êé¼ÜºÅ£º"+shelfid+",Êé¼ÜÀà±ğÃû£º"+bname+",°üº¬[Êé±¾Ãû£º"+name+",±àºÅ£º"+id+",¼Û¸ñ£º"+price+",×÷Õß£º"+author+"]";
-    }
+	private String name;
+	private Integer id;
+	private Double price;
+	private String author;
+	private Integer shelfid;
+	private String bname;
+	@Override
+	public String toString() {
+		return "ä¹¦æ¶[ä¹¦æ¶å·ï¼š"+shelfid+",ä¹¦æ¶ç±»åˆ«åï¼š"+bname+",åŒ…å«[ä¹¦æœ¬åï¼š"+name+",ç¼–å·ï¼š"+id+",ä»·æ ¼ï¼š"+price+",ä½œè€…ï¼š"+author+"]";
+	}
 	public String getName() {
 		return name;
 	}

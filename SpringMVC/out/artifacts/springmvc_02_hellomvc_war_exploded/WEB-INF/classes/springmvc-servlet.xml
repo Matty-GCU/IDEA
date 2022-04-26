@@ -37,8 +37,7 @@
     <context:component-scan base-package="com.example.controller"/>
 
     <!-- 使用Web容器默认的Servlet来处理对静态资源的请求，用于解决【静态资源访问】的问题 -->
-    <!-- 但是说实话我没有成功解决过这个问题，所以这里也算是一个TODO吧 -->
-<!--    <mvc:default-servlet-handler/>-->
+    <mvc:default-servlet-handler/>
 
     <!-- 支持SpringMVC注解驱动 -->
     <!-- 狂神：在spring中一般采用@RequestMapping注解来完成映射关系，
@@ -61,5 +60,23 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+    <!-- 配置SpringMVC拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 这里配置的path为/**相当于web.xml配置url-pattern为/*，包括该路径及其任意子路径 -->
+            <mvc:mapping path="/**"/>
+            <bean class="com.example.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!-- 使用CommonsMultipartResolver配置Multipart解析器 -->
+    <!-- 注意这个bean的id是固定的，必须为multipartResolver，否则会出现org.springframework.beans.BeanInstantiationException（500错误） -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 请求的编码格式，默认为 ISO-8859-1，此处设置为 UTF-8（注：defaultEncoding 必须和 JSP 中的 pageEncoding 一致，以便正确读取表单的内容） -->
+        <property name="defaultEncoding" value="UTF-8" />
+        <!-- 上传文件大小上限，单位为字节（10485760Byte=10MB） -->
+        <property name="maxUploadSize" value="10485760" />
+    </bean>
 
 </beans>

@@ -9,7 +9,9 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/javaee_test"/>
+                <!-- https://www.iteye.com/blog/rhodian-1930891 -->
+                <!-- allowMultiQueries=true -->
+                <property name="url" value="jdbc:mysql://localhost:3306/javaee_test?allowMultiQueries=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="123456"/>
             </dataSource>
@@ -19,5 +21,7 @@
     <mappers>
         <mapper resource="mapper/BookMapper.xml"/>
         <mapper resource="mapper/BookShelfMapper.xml"/>
+        <mapper resource="mapper/RecordMapper.xml"/>
+        <mapper resource="mapper/BorrowCardMapper.xml"/>
     </mappers>
 </configuration>

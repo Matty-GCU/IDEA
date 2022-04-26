@@ -39,4 +39,13 @@ public class Record {
     public void setDate(Date date) {
         this.date = date;
     }
+    
+    @Override
+    public String toString() {
+        return "借书记录{" +
+                "借书用户=" + user +
+                ", 借的书=" + book +
+                ", 借书日期=" + date.toLocalDate() +
+                '}';
+    }
 }

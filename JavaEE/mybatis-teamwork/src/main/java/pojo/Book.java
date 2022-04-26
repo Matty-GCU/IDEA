@@ -78,13 +78,13 @@ public class Book {
     
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", author='" + author + '\'' +
-                ", number=" + number +
-                ", " + (bookShelf == null ? "" : "bookShelfName='" + bookShelf.getName()) +
-                "'}";
+        return "图书{" +
+                "图书编号=" + id +
+                ", 书名='" + name + '\'' +
+                ", 价格=" + price +
+                ", 作者='" + author + '\'' +
+                ", 图书数量=" + number +
+                (bookShelf == null ? "" : ", 所属书架类别='" + bookShelf.getName()) +
+                "}";
     }
 }

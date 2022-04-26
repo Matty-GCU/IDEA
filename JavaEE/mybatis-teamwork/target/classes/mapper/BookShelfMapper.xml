@@ -7,11 +7,13 @@
     <select id="selectBookShelfById" resultMap="bookShelfMap">
         select * from javaee_test.book_shelf where id = #{id}
     </select>
+
     <resultMap id="bookShelfMap" type="pojo.BookShelf">
         <id property="id" column="id"/>
         <id property="name" column="name"/>
         <collection property="books" column="id" select="selectBookById"/>
     </resultMap>
+
     <select id="selectBookById" resultType="pojo.Book">
         select * from javaee_test.book where shelfId = #{shelfId}
     </select>

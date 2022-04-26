@@ -57,4 +57,4 @@ create table borrowerList(
     constraint user_id foreign key(user_id) references user(uid),
     constraint book_id foreign key(book_id) references book(id)
 );
-insert into borrowerList(user_id,book_id) values(1,1),(1,2),(1,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10);
+insert into borrowerList(user_id,book_id) values(1,1),(1,2),(2,1),(2,2),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10);

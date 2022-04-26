@@ -9,20 +9,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class XMLUtil2 {
     
     public static Object getBean(String tagName) {
-        return getBean(null, tagName);
+        String defaultAbsolutePath = "C:\\Users\\Matty's PC\\IdeaProjects\\21-22SecondSemester\\src\\design\\pattern\\config.xml";
+        return getBean(defaultAbsolutePath, tagName);
     }
     
-    public static Object getBean(String pathFromSrc, String tagName) {
+    public static Object getBean(String absolutePath, String tagName) {
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            if(pathFromSrc == null || "".equals(pathFromSrc)) {
-                pathFromSrc = "C:\\Users\\Matty's PC\\IdeaProjects\\21-22SecondSemester\\src\\design\\pattern\\config.xml";
-            }
-            else {
-                pathFromSrc = "C:\\Users\\Matty's PC\\IdeaProjects\\21-22SecondSemester\\src\\" + pathFromSrc;
-            }
-            Document document = documentBuilder.parse(pathFromSrc);
+            Document document = documentBuilder.parse(absolutePath);
             NodeList nodeList = document.getElementsByTagName(tagName);
             String className = nodeList.item(0).getTextContent();
             Class<Object> c = (Class<Object>) Class.forName(className);

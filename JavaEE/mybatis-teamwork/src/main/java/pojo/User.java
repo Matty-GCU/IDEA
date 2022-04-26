@@ -1,23 +1,23 @@
 package pojo;
 
 public class User {
-    int userId;
+    int id;
     String name;
     
     public User() {
     }
     
-    public User(int userId, String name) {
-        this.userId = userId;
+    public User(int id, String name) {
+        this.id = id;
         this.name = name;
     }
     
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
     
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int id) {
+        this.id = id;
     }
     
     public String getName() {
@@ -26,5 +26,13 @@ public class User {
     
     public void setName(String name) {
         this.name = name;
+    }
+    
+    @Override
+    public String toString() {
+        return "用户{" +
+                "用户编号=" + id +
+                ", 姓名='" + name + '\'' +
+                '}';
     }
 }

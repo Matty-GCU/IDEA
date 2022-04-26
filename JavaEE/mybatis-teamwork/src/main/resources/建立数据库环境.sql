@@ -50,4 +50,24 @@ create table record (
                         bookId int,
                         date date
 );
-insert into record (userId, bookId, date) VALUES (1, 5, '2022-04-20');
+insert into record (userId, bookId, date)
+VALUES
+(1, 5, '2022-04-20'),
+(1, 3, '2022-04-21'),
+(2, 3, '2022-04-22'),
+(2, 4, '2022-04-23'),
+(2, 10, '2022-04-24');
+
+
+# 用户借书卡（类似校园卡/会员卡）
+drop table if exists borrowCard;
+create  table borrowCard (
+                             userId int comment '所属用户',
+                             code long comment '卡编号'
+);
+insert into borrowCard
+values
+(1, 202010098109),
+(2, 202011111111),
+(3, 202022222222),
+(4, 202033333333);

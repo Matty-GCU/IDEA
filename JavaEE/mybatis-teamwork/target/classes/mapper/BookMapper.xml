@@ -67,8 +67,12 @@
     </select>
 
     <insert id="insertBook" parameterType="pojo.Book" >
+        <if test="bookShelf != null">
+            insert into javaee_test.book_shelf(id, name)
+            values(#{bookShelf.id}, #{bookShelf.name});
+        </if>
         insert into javaee_test.book(name, price, author, number, shelfid)
-        values(#{name}, #{price}, #{author}, #{number}, #{bookShelf.id})
+        values(#{name}, #{price}, #{author}, #{number}, #{bookShelf.id});
     </insert>
 
     <update id="updateBookById" parameterType="pojo.Book">

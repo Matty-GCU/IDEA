@@ -3,5 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.RecordMapper">
-<!--    <select id=""-->
+    <select id="selectAllRecord" resultMap="recordResultMap">
+        select a.userId as userId, userName, bookId, name as bookName, price, author, number, date
+        from javaee_test.record a, javaee_test.user b, javaee_test.book c
+        where a.userId = b.userId and a.bookId = c.id;
+    </select>
+    <resultMap id="recordResultMap" type="pojo.Record">
+        <result column="userId" property="user.id"/>
+        <result column="userName" property="user.name"/>
+        <result column="bookId" property="book.id"/>
+        <result column="bookName" property="book.name"/>
+        <result column="price" property="book.price"/>
+        <result column="author" property="book.author"/>
+        <result column="number" property="book.number"/>
+        <result column="date" property="date"/>
+    </resultMap>
 </mapper>

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/mybatis-teamwork-zhang/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-teamwork-zhang/src/main/java/pojo/SelectBookShelfById.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-teamwork-zhang/src/main/java/pojo/SelectUserById.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-teamwork-zhang/src/main/java/test/testMoreToMoreController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-teamwork/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-teamwork/src/main/resources/mapper/BookMapper.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-teamwork/src/main/resources/第7-8周实训作业 &amp; 中期考核.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mybatis-teamwork/src/test/java/mapper/MapperTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-teamwork/src/test/java/mapper/BookMapperTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/test/java/textbook/chapter06/TestCh06.java" charset="UTF-8" />

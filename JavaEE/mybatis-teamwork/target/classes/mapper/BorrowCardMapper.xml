@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BorrowCardMapper">
+    <select id="selectCardByUserId" parameterType="_int" resultMap="cardResultMap">
+        select a.userId as userId, userName, code
+        from javaee_test.user a, javaee_test.borrowcard b
+        where a.userId = b.userId and a.userId = #{id}
+    </select>
+    <resultMap id="cardResultMap" type="pojo.BorrowCard">
+        <result column="userId" property="user.id"/>
+        <result column="userName" property="user.name"/>
+        <result column="code" property="code"/>
+    </resultMap>
+</mapper>
