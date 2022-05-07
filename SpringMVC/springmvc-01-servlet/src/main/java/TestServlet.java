@@ -22,6 +22,7 @@ public class TestServlet extends HttpServlet {
         } else {
             req.getSession().setAttribute("message", "方法名为空或方法名不存在");
         }
+        resp.add
         //2.调用业务层
         //...
         //3.视图转发或重定向

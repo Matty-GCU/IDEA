@@ -11,7 +11,8 @@ public class SpringbootRedisApplication {
         ConfigurableApplicationContext context = SpringApplication.run(SpringbootRedisApplication.class, args);
         Object redisTemplate = context.getBean("redisTemplate");
         System.out.println(redisTemplate);
-        Object user = context.getBean("get2");
+//        Object user = context.getBean("user2");
+        Object user = context.getBean("user2Bean");
         System.out.println(user);
     }
     
