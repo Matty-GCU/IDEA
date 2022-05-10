@@ -21,8 +21,8 @@ public class MyCondition implements Condition {
 //        return flag;
         
         // 需求2：导入指定依赖后，才允许创建Bean
-        System.out.println(ConditionOnMethod.class.getName());
-        Map<String, Object> annotationAttributes = metadata.getAnnotationAttributes(ConditionOnMethod.class.getName());
+        System.out.println(ConditionOnClass.class.getName());
+        Map<String, Object> annotationAttributes = metadata.getAnnotationAttributes(ConditionOnClass.class.getName());
         assert annotationAttributes != null;
         String[] classNames = (String[]) annotationAttributes.get("classNames");
         boolean flag = true;

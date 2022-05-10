@@ -9,7 +9,7 @@ import design.pattern.第1112周上机.桥接模式.platform.WebPlatform;
 
 public class Client {
     public static void main(String[] args) {
-        // 以下所有维度选择、注入的代码实际上都可以通过读取XML文件+反射的方式完成，
+        // 以下所有维度选择（new）、注入（set）的代码实际上都可以通过读取XML文件+反射的方式完成，
         // 改变任意一个维度的实现类/继承类时不需要改变源码，符合开闭原则。
         Platform platform = new WebPlatform();
         Map map = new GaodeMap();

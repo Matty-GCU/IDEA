@@ -1,6 +1,6 @@
 package com.example.springbootredis.config;
 
-import com.example.springbootredis.condition.ConditionOnMethod;
+import com.example.springbootredis.condition.ConditionOnClass;
 import com.example.springbootredis.entity.User2;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ public class MyConfig {
 
     @Bean
 //    @Conditional(MyCondition.class)
-    @ConditionOnMethod(classNames = "redis.clients.jedis.Jedis")
+    @ConditionOnClass(classNames = "redis.clients.jedis.Jedis")
     public User2 user2() {
         return new User2();
     }

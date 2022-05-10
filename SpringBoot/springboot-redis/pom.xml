@@ -32,7 +32,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!---->
         <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
             <groupId>redis.clients</groupId>

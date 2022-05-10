@@ -1,11 +1,16 @@
 package design.pattern.第1112周上机.装饰模式.additionalfood;
 
-import design.pattern.第1112周上机.装饰模式.stablefood.StableFood;
+import design.pattern.第1112周上机.装饰模式.stablefood.Food;
 
-public abstract class AdditionalFood extends StableFood {
-    protected StableFood stableFood;
+public class AdditionalFood extends Food {
+    protected Food food;
     
-    public void setStableFood(StableFood stableFood) {
-        this.stableFood = stableFood;
+    public AdditionalFood(Food food) {
+        this.food = food;
+    }
+    
+    @Override
+    public int getPrice() {
+        return food.getPrice();
     }
 }

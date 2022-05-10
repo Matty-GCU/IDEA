@@ -1,6 +1,6 @@
 package design.pattern.第1112周上机.组合模式;
 
-public class EduOffice extends Office {
+public class EduOffice extends AbstractNormalOffice {
     public EduOffice(String name) {
         super(name);
     }

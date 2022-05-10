@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "myredis",
+      "type": "com.example.myautoconfigure.config.MyRedisProperties",
+      "sourceType": "com.example.myautoconfigure.config.MyRedisProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "myredis.host",
+      "type": "java.lang.String",
+      "sourceType": "com.example.myautoconfigure.config.MyRedisProperties"
+    },
+    {
+      "name": "myredis.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.example.myautoconfigure.config.MyRedisProperties"
+    }
+  ],
+  "hints": []
+}
