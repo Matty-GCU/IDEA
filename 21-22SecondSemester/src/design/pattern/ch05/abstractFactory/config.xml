@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <skinFactory>design.pattern.ch05.abstractFactory.SpringSkinFactory</skinFactory>
+    <skinFactory>design.pattern.ch05.abstractfactory.SpringSkinFactory</skinFactory>
 </config>

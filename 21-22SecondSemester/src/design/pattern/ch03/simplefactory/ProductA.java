@@ -1,4 +1,4 @@
-package design.pattern.ch03.simple.factory;
+package design.pattern.ch03.simplefactory;
 
 public class ProductA extends Product {
     

@@ -1,6 +1,5 @@
 package design.pattern.ch04.factory;
 
-import design.pattern.ch03.simple.factory.Product;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 

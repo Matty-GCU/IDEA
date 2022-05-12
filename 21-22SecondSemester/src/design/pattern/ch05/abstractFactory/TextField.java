@@ -1,4 +1,4 @@
-package design.pattern.ch05.abstractFactory;
+package design.pattern.ch05.abstractfactory;
 
 public interface TextField {
     void display();

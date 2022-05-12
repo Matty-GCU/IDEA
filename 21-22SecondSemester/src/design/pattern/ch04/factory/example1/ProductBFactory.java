@@ -1,7 +1,7 @@
 package design.pattern.ch04.factory.example1;
 
-import design.pattern.ch03.simple.factory.Product;
-import design.pattern.ch03.simple.factory.ProductB;
+import design.pattern.ch03.simplefactory.Product;
+import design.pattern.ch03.simplefactory.ProductB;
 
 public class ProductBFactory implements Factory {
     /**
