@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <product>design.pattern.ch04.factorymethod.example1.ProductAFactory</product>
+</config>

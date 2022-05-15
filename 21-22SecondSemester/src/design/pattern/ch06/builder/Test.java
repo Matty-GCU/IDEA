@@ -1,6 +1,6 @@
 package design.pattern.ch06.builder;
 
-import design.pattern.ch04.factory.XMLUtil;
+import design.pattern.ch04.factorymethod.XMLUtil;
 
 public class Test {
     public static void main(String[] args) {
