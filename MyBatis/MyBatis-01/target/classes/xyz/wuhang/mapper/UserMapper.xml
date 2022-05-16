@@ -15,7 +15,7 @@
 
     <!-- 如果参数类型是基本类型，是可以不写的。 -->
     <select id="getUserById" parameterType="int" resultType="xyz.wuhang.pojo.User">
-        select * from mybatis.user where id = #{id}
+        select * from mybatis.user where id = #{sbakjff}
     </select>
 
     <!-- #{变量名}能够取出参数对象中的对应属性值，并且不依赖其getter方法（没有getter也不会报错） -->
