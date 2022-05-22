@@ -20,3 +20,6 @@ public class FlyweightPatternTest {
         chessman5.display(new Coordinates(461, 98));
     }
 }
+interface A {
+    public static void nn() {}
+}

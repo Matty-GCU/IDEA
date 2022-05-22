@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-teamwork</module>
-        <module>mybatis-teamwork-zhang</module>
+        <module>springmvc-hw-prj</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -28,7 +28,8 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>5.8.2</version>
-      <scope>test</scope>
+      <!-- 这样子模块就可以继承了 -->
+<!--      <scope>test</scope>-->
     </dependency>
     <!-- springframework的一个比较顶层的模块 -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->

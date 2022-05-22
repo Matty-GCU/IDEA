@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springmvc-hw-prj" />
         <module name="mybatis-teamwork" />
-        <module name="mybatis-teamwork-zhang" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-teamwork-zhang" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
