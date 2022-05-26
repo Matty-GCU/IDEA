@@ -50,7 +50,7 @@
         <result property="bookShelf.name" column="shelfName"/>
     </resultMap>
 
-    <select id="selectBook" resultMap="bookMap1">
+    <select id="selectSomeBook" resultMap="bookMap1">
         select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName
         from javaee_test.book a, javaee_test.book_shelf b
         where a.shelfId = b.id and a.id in

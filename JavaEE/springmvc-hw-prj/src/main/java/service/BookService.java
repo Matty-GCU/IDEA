@@ -20,4 +20,19 @@ public class BookService {
         return sqlSession.selectList("mapper.BookMapper.selectAllBooks");
     }
     
+    public List<Book> selectBookByName(String bookName) {
+        return sqlSession.selectList("mapper.BookMapper.selectBookByName", bookName);
+    }
+    
+    public int insertBook(Book book) {
+        return sqlSession.insert("mapper.BookMapper.insertBook", book);
+    }
+    
+    public int updateBook(Book book) {
+        return sqlSession.update("mapper.BookMapper.updateBookById", book);
+    }
+    
+    public Book selectBookById(int id) {
+        return sqlSession.selectOne("mapper.BookMapper.selectBookById", id);
+    }
 }

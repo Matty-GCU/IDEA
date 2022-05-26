@@ -70,13 +70,13 @@ public class BookMapperTest {
      * 使用<foreach>元素
      */
     @Test
-    void selectBook() {
+    void selectSomeBook() {
         List<Integer> bookIdList = new ArrayList();
         bookIdList.add(1);
         bookIdList.add(2);
         bookIdList.add(3);
         bookIdList.add(4);
-        List<Book> books = sqlSession.selectList("mapper.BookMapper.selectBook", bookIdList);
+        List<Book> books = sqlSession.selectList("mapper.BookMapper.selectSomeBook", bookIdList);
         for (Book book : books) {
             System.out.println(book);
         }
