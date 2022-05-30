@@ -35,4 +35,8 @@ public class BookService {
     public Book selectBookById(int id) {
         return sqlSession.selectOne("mapper.BookMapper.selectBookById", id);
     }
+    
+    public int deleteById(int id) {
+        return sqlSession.delete("mapper.BookMapper.deleteBookById", id);
+    }
 }

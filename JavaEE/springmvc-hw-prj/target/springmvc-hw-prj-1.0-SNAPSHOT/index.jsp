@@ -2,11 +2,9 @@
 <html>
 <head>
     <title>首页</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-    <a href="book.jsp"><button>书籍管理</button></a>
-<%--    <a href="bookShelf.jsp"><button>书架管理</button></a>--%>
-<%--    <a href="borrowCard.jsp"><button>借书卡管理</button></a>--%>
-<%--    <a href="record.jsp"><button>借书记录管理</button></a>--%>
+    <a href="${pageContext.request.contextPath}/user/toLogin">书籍登录</a>
 </body>
 </html>

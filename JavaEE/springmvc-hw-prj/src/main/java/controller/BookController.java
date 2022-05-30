@@ -3,10 +3,7 @@ package controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pojo.Book;
 import pojo.BookShelf;
 import service.BookService;
@@ -15,7 +12,7 @@ import service.BookShelfService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class BookController {
     
     @Autowired
@@ -24,8 +21,14 @@ public class BookController {
     @Autowired
     BookShelfService bookShelfService;
     
+    @RequestMapping
+    public String toBookPage(Model model) {
+        //这里的new Book()就是form-backing object！
+        model.addAttribute("book", new Book());
+        return "book";
+    }
+    
     @RequestMapping("/getByName")
-    @GetMapping
     public String getByName(String name, Model model) {
         List<Book> books = bookService.selectBookByName("%" + name + "%");
         model.addAttribute("result", books);
@@ -34,7 +37,6 @@ public class BookController {
     }
     
     @RequestMapping("/getAll")
-    @GetMapping
     public String getAll(Model model) {
         List<Book> books = bookService.selectAllBooks();
         model.addAttribute("result", books);
@@ -43,7 +45,6 @@ public class BookController {
     }
     
     @RequestMapping("/add")
-    @PostMapping
     public String add(Book book, int bookShelfId, String bookShelfName, Model model) {
         BookShelf bookShelf = bookShelfService.getById(bookShelfId);
         // 数据库里没有该书架，所以新增书籍之前应该先新增该书架
@@ -63,8 +64,10 @@ public class BookController {
         return "result2";
     }
     
+    /**
+     * @param book 绑定请求参数输入值到邻域模型
+     */
     @RequestMapping("/update")
-    @PutMapping
     public String update(Book book, Model model) {
         // 只有当该书籍已存在时，才可以修改成功
         int lineAffected = bookService.updateBook(book);
@@ -75,4 +78,12 @@ public class BookController {
         return "result2";
     }
 
+    @RequestMapping("/delete")
+    public String update(int id, Model model) {
+        int lineAffected = bookService.deleteById(id);
+        String resultMessage = lineAffected + "行受影响，";
+        resultMessage += (lineAffected == 0) ? "删除失败！" : "删除成功";
+        model.addAttribute("result", resultMessage);
+        return "result2";
+    }
 }

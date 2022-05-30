@@ -102,4 +102,13 @@ public class BookMapperTest {
         book1.setName("新书名");
         System.out.println(sqlSession.update("mapper.BookMapper.updateBookById", book1));
     }
+    
+    /**
+     * 后来为了springmvc-hw-prj才加的功能
+     */
+    @Test
+    void deleteBookById() {
+        int delete = sqlSession.delete("mapper.BookMapper.deleteBookById", 18);
+        System.out.println("删掉了" + delete + "本书");
+    }
 }

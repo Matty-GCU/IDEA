@@ -54,7 +54,7 @@ public class NutritionFacts {
                 .calories(100).sodium(35).carbohydrate(27).build();
         
         //经历向上强转
-        A a = ((A.ABuilder)(new A.ABuilder(240, 8).calories(100).sodium(35))).abc(15).build();
+        Child child = ((Child.ABuilder)(new Child.ABuilder(240, 8).calories(100).sodium(35))).abc(15).build();
     }
 }
 
@@ -62,7 +62,7 @@ public class NutritionFacts {
 /**
  * 子类新增了一个属性，如果没有采取【递归类型参数】和【模拟的self类型】这两种解决方案，则必须要经历强制类型转换
  */
-class A extends NutritionFacts {
+class Child extends NutritionFacts {
     //新增的属性
     private int abc;
     
@@ -80,12 +80,12 @@ class A extends NutritionFacts {
         }
         
         @Override
-        public A build() {
-            return new A(this);
+        public Child build() {
+            return new Child(this);
         }
     }
     
-    private A(ABuilder aBuilder) {
+    private Child(ABuilder aBuilder) {
         super(aBuilder);
         this.abc = aBuilder.abc;
     }

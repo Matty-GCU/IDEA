@@ -81,4 +81,11 @@
         set name=#{name}, price=#{price}, author=#{author}, number=#{number}
         where id=#{id}
     </update>
+
+    <!-- 后来为了springmvc-hw-prj才加的功能 -->
+    <delete id="deleteBookById" parameterType="_int">
+        # 把IDEA的Data Source连接的url加上数据库名，在这里写表的时候就不用指定数据库名了
+        # （本来不写也是可以的，只是会报红+没提示）
+        delete from book where id = #{id}
+    </delete>
 </mapper>
