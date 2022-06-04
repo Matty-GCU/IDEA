@@ -70,7 +70,7 @@
         <!-- 因为书表的shelfid属性是外键，所以必须先插入新书架 -->
         <if test="bookShelf != null">
             insert into javaee_test.book_shelf(id, name)
-            values(#{bookShelf.id}, #{bookShelf.name});
+            values(#{bookShelf.id}, #{bookShelf.name})
         </if>
         insert into javaee_test.book(name, price, author, number, shelfid)
         values(#{name}, #{price}, #{author}, #{number}, #{bookShelf.id});
@@ -78,7 +78,7 @@
 
     <update id="updateBookById" parameterType="pojo.Book">
         update javaee_test.book
-        set name=#{name}, price=#{price}, author=#{author}, number=#{number}
+        set name=#{name}, price=#{price}, author=#{author}, number=#{number}, shelfId=#{bookShelf.id}
         where id=#{id}
     </update>
 

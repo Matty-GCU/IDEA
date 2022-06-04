@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="false"%>
 <html>
 <head>
     <title>首页</title>
@@ -10,6 +11,7 @@
         账号：<form:input path="userName"/>
         密码：<form:password path="pswd"/>
         <input type="submit" value="登录">
+        ${errorMsg}
     </form:form>
 </body>
 </html>

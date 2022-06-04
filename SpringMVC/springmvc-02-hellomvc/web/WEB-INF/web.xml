@@ -31,5 +31,4 @@
         <url-pattern>*.js</url-pattern>
     </servlet-mapping>
 
-
 </web-app>
