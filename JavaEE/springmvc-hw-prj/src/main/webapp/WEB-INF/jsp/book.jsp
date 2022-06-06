@@ -51,5 +51,6 @@
         请输入书ID：<input name="id"><br>
         <input type="submit" value="点击删除"/>
     </form>
+
 </body>
 </html>

@@ -298,3 +298,44 @@
 [DEBUG][22-06-04][mapper.BookMapper.selectAllBooks]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b where a.shelfId = b.id;
 [DEBUG][22-06-04][mapper.BookMapper.selectAllBooks]==> Parameters: 
 [DEBUG][22-06-04][mapper.BookMapper.selectAllBooks]<==      Total: 18
+[DEBUG][22-06-06][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1333576782.
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b where a.shelfId = b.id;
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]==> Parameters: 
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]<==      Total: 18
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b WHERE a.shelfId = b.id and a.name like ?
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==> Parameters: %%(String)
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]<==      Total: 18
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b WHERE a.shelfId = b.id and a.name like ?
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==> Parameters: %11%(String)
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]<==      Total: 1
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG][22-06-06][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG][22-06-06][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 1933102942.
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b WHERE a.shelfId = b.id and a.name like ?
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]==> Parameters: %Γ¨ίδ%(String)
+[DEBUG][22-06-06][mapper.BookMapper.selectBookByName]<==      Total: 1
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]==>  Preparing: select a.id as bookId, a.name as bookName, price, author, number, shelfId, b.name as shelfName from javaee_test.book a, javaee_test.book_shelf b where a.shelfId = b.id;
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]==> Parameters: 
+[DEBUG][22-06-06][mapper.BookMapper.selectAllBooks]<==      Total: 18
