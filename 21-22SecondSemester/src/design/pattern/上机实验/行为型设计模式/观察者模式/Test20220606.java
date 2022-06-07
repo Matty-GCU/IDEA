@@ -7,10 +7,10 @@ public class Test20220606 {
         Pursuer wu2 = new Pursuer();
         Pursuer wu3 = new Pursuer();
         Pursuer wu4 = new Pursuer();
-        huang.addPursuer(wu1);
-        huang.addPursuer(wu2);
-        huang.addPursuer(wu3);
-        huang.addPursuer(wu4);
-        huang.update("有空");
+        wu1.pursue(huang);
+        wu2.pursue(huang);
+        wu3.pursue(huang);
+        wu4.pursue(huang);
+        huang.setState("有空");
     }
 }
