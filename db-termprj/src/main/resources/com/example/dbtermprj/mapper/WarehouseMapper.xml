@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbtermprj.mapper.WarehouseMapper">
+    <insert id="add" parameterType="com.example.dbtermprj.entity.Warehouse">
+        insert into warehouse(id, address, area)
+        values (#{id}, #{address}, #{area})
+    </insert>
+
+    <delete id="deleteById">
+        delete from warehouse
+        where id = #{id};
+        delete from warehouse_manager
+        where warehouseId = #{id};
+        delete from warehouse_part
+        where warehouseId = #{id};
+        delete from manager
+        where warehouseId = #{id};
+        delete from part
+        where warehouseId = #{id}
+    </delete>
+
+    <update id="updateById" parameterType="com.example.dbtermprj.entity.Warehouse">
+        update warehouse
+        set address = #{address},
+            area = #{area}
+        where id = #{id}
+    </update>
+
+    <select id="getById" resultType="com.example.dbtermprj.entity.Warehouse">
+        select * from warehouse
+        where id = #{id}
+    </select>
+
+    <select id="getAll" resultType="com.example.dbtermprj.entity.Warehouse">
+        select * from warehouse
+    </select>
+</mapper>
