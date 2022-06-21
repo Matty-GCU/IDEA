@@ -16,4 +16,5 @@ public interface ManagerMapper {
     public List<Manager> getAll();
     public List<Manager> getByWarehouseId(Integer warehouseId);
     
+    public Manager login(Integer id, String pwd);
 }

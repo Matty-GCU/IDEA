@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface PartService {
     
-    public int add(Part part);
+    public Integer add(Part part);
     
-    public int deleteById(int id);
+    public Integer deleteById(Integer id);
     
-    public int updateById(Part part);
+    public Integer updateById(Part part);
     
-    public Part getById(int id);
+    public Part getById(Integer id);
     public List<Part> getAll();
     public List<Part> getByWarehouseId(int warehouseId);
     

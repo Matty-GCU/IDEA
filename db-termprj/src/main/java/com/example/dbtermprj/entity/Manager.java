@@ -11,14 +11,16 @@ public class Manager {
     Integer age;
     Integer phone;
     Integer warehouseId;
+    String pwd;
     
-    public Manager(Integer id, String name, String gender, Integer age, Integer phone, Integer warehouseId) {
+    public Manager(Integer id, String name, String gender, Integer age, Integer phone, Integer warehouseId, String pwd) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.age = age;
         this.phone = phone;
         this.warehouseId = warehouseId;
+        this.pwd = pwd;
     }
     
     public Integer getId() {
@@ -67,6 +69,14 @@ public class Manager {
     
     public void setWarehouseId(Integer warehouseId) {
         this.warehouseId = warehouseId;
+    }
+    
+    public String getPwd() {
+        return pwd;
+    }
+    
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
     
     @Override

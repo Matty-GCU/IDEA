@@ -15,22 +15,22 @@ public class WarehouseServiceImpl implements WarehouseService {
     WarehouseMapper warehouseMapper;
     
     @Override
-    public int add(Warehouse warehouse) {
+    public Integer add(Warehouse warehouse) {
         return warehouseMapper.add(warehouse);
     }
     
     @Override
-    public int deleteById(int id) {
+    public Integer deleteById(Integer id) {
         return warehouseMapper.deleteById(id);
     }
     
     @Override
-    public int updateById(Warehouse warehouse) {
+    public Integer updateById(Warehouse warehouse) {
         return warehouseMapper.updateById(warehouse);
     }
     
     @Override
-    public Warehouse getById(int id) {
+    public Warehouse getById(Integer id) {
         return warehouseMapper.getById(id);
     }
     

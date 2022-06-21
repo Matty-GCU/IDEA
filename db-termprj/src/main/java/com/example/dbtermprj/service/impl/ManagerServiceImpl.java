@@ -15,22 +15,22 @@ public class ManagerServiceImpl implements ManagerService {
     ManagerMapper managerMapper;
     
     @Override
-    public int add(Manager manager) {
+    public Integer add(Manager manager) {
         return managerMapper.add(manager);
     }
     
     @Override
-    public int deleteById(int id) {
+    public Integer deleteById(Integer id) {
         return managerMapper.deleteById(id);
     }
     
     @Override
-    public int updateById(Manager manager) {
+    public Integer updateById(Manager manager) {
         return managerMapper.updateById(manager);
     }
     
     @Override
-    public Manager getById(int id) {
+    public Manager getById(Integer id) {
         return managerMapper.getById(id);
     }
     
@@ -40,7 +40,12 @@ public class ManagerServiceImpl implements ManagerService {
     }
     
     @Override
-    public List<Manager> getByWarehouseId(int warehouseId) {
+    public List<Manager> getByWarehouseId(Integer warehouseId) {
         return managerMapper.getByWarehouseId(warehouseId);
+    }
+    
+    @Override
+    public Manager login(Integer id, String pwd) {
+        return managerMapper.login(id, pwd);
     }
 }

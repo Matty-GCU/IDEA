@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface WarehouseService {
     
-    public int add(Warehouse warehouse);
+    public Integer add(Warehouse warehouse);
     
-    public int deleteById(int id);
+    public Integer deleteById(Integer id);
     
-    public int updateById(Warehouse warehouse);
+    public Integer updateById(Warehouse warehouse);
     
-    public Warehouse getById(int id);
+    public Warehouse getById(Integer id);
     public List<Warehouse> getAll();
 }

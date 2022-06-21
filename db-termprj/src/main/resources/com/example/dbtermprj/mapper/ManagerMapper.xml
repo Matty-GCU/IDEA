@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dbtermprj.mapper.ManagerMapper">
     <insert id="add" parameterType="com.example.dbtermprj.entity.Manager">
-        insert into manager(id, name, gender, age, phone, warehouseId)
-        values (#{id}, #{name}, #{gender}, #{age}, #{phone}, #{warehouseId});
+        insert into manager(id, name, gender, age, phone, warehouseId, pwd)
+        values (#{id}, #{name}, #{gender}, #{age}, #{phone}, #{warehouseId}, #{pwd});
         insert into warehouse_manager(warehouseId, managerId)
         values (#{warehouseId}, #{id})
     </insert>
@@ -42,5 +42,10 @@
     <select id="getByWarehouseId" resultType="com.example.dbtermprj.entity.Manager">
         select * from manager
         where warehouseId = #{warehouseId}
+    </select>
+
+    <select id="login" resultType="com.example.dbtermprj.entity.Manager">
+        select * from manager
+        where id = #{id} and pwd = #{pwd}
     </select>
 </mapper>

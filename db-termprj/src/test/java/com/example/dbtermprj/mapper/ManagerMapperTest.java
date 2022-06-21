@@ -16,7 +16,7 @@ public class ManagerMapperTest {
     
     @Test
     void add() {
-        System.out.println(managerMapper.add(new Manager(1, "管理员1", "男", 20, 10086, 1)));
+        System.out.println(managerMapper.add(new Manager(1, "管理员1", "男", 20, 10086, 1, "123")));
     }
     
     @Test

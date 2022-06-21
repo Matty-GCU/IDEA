@@ -15,22 +15,22 @@ public class PartServiceImpl implements PartService {
     PartMapper partMapper;
     
     @Override
-    public int add(Part part) {
+    public Integer add(Part part) {
         return partMapper.add(part);
     }
     
     @Override
-    public int deleteById(int id) {
+    public Integer deleteById(Integer id) {
         return partMapper.deleteById(id);
     }
     
     @Override
-    public int updateById(Part part) {
+    public Integer updateById(Part part) {
         return partMapper.updateById(part);
     }
     
     @Override
-    public Part getById(int id) {
+    public Part getById(Integer id) {
         return partMapper.getById(id);
     }
     

@@ -6,16 +6,18 @@ import java.util.List;
 
 public interface ManagerService {
     
-    public int add(Manager manager);
+    public Integer add(Manager manager);
     
-    public int deleteById(int id);
+    public Integer deleteById(Integer id);
     
-    public int updateById(Manager manager);
+    public Integer updateById(Manager manager);
     
-    public Manager getById(int id);
+    public Manager getById(Integer id);
     
     public List<Manager> getAll();
     
-    public List<Manager> getByWarehouseId(int warehouseId);
+    public List<Manager> getByWarehouseId(Integer warehouseId);
+    
+    public Manager login(Integer id, String pwd);
     
 }

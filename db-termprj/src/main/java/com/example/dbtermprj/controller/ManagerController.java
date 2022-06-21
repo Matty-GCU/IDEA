@@ -9,10 +9,21 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/manager")
+@CrossOrigin(originPatterns = "*", allowCredentials = "true", allowedHeaders = "*")
 public class ManagerController {
     
     @Autowired
     ManagerService managerService;
+    
+    @RequestMapping(value = "/login/{id}/{pwd}")
+    public String login(@PathVariable Integer id, @PathVariable String pwd) {
+        if (managerService.login(id, pwd) == null) {
+            return "失败";
+        }
+        else {
+            return "成功";
+        }
+    }
     
     @PostMapping("/add")
     public int addManager(@RequestBody Manager manager) {
