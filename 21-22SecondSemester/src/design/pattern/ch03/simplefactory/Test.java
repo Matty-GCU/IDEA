@@ -26,7 +26,7 @@ public class Test {
             e.printStackTrace();
         }
         try {
-            document = documentBuilder.parse("src/design/pattern/ch03/simple/factory/simpleFactory-config.xml");
+            document = documentBuilder.parse("src/design/pattern/ch03/simplefactory/simpleFactory-config.xml");
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {

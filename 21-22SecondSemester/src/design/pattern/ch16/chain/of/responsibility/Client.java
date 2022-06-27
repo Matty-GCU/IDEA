@@ -17,7 +17,7 @@ public class Client {
         PurchaseReuqest reuqest2 = new PurchaseReuqest(12000, 2, "更换厨具设备");
         PurchaseReuqest reuqest3 = new PurchaseReuqest(200000, 3, "重新装修食堂");
         PurchaseReuqest reuqest4 = new PurchaseReuqest(1000000, 4, "新建食堂大楼");
-    
+        
         directorA.handleRequest(reuqest1);
         directorA.handleRequest(reuqest2);
         directorA.handleRequest(reuqest3);

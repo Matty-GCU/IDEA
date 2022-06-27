@@ -25,7 +25,7 @@ public class ManagerController {
         }
     }
     
-    @PostMapping("/add")
+    @RequestMapping("/add")
     public int addManager(@RequestBody Manager manager) {
         return managerService.add(manager);
     }
